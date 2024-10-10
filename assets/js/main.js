@@ -49,3 +49,29 @@ document.addEventListener('DOMContentLoaded', animateResultCount(1,452,counted))
 document.addEventListener('DOMContentLoaded', animateResultCountSlow(1,52,countedFirst));
 document.addEventListener('DOMContentLoaded', animateResultCountSlow(1,52,countedLast));
 
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    centeredSlides: true,
+    spaceBetween: 90, 
+    initialSlide: 1, 
+    pagination: {
+      el: ".swiper-pagination",
+      type: "fraction",
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+        568: {         
+            slidesPerView: 1.5, 
+        },
+        768: {         
+            slidesPerView: 1.5, 
+        },
+        1024: {
+            slidesPerView: 1.5, // On larger screens, show 2.5 slides (center + partial next and prev)
+        }
+    }
+  });
+  
