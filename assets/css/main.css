@@ -6,6 +6,7 @@
 }
 
 .row {
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -457,6 +458,55 @@ header {
      object-fit: cover;
 }
 
+.section6 {
+  margin-top: 10px;
+  margin-bottom: 120px;
+}
+.section6 .container {
+  flex-direction: column;
+}
+.section6 h2 {
+  font-size: 50px;
+  padding: 10px 0;
+}
+.section6 p {
+  color: #909092;
+  width: 55%;
+  text-align: center;
+  padding-bottom: 60px;
+}
+.section6 .row {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.section6 .row .team_member {
+  position: relative;
+  width: 31%;
+}
+.section6 .row .team_member img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+}
+.section6 .row .team_member h3 {
+  background-color: white;
+  position: absolute;
+  bottom: -20px;
+  line-height: 20px;
+  font-size: 18px;
+  left: 80px;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 12px 44px;
+  background-color: white;
+  box-shadow: 0px 16px 35px 0px rgba(0, 0, 2, 0.08);
+}
+.section6 .row .team_member h3 span {
+  font-weight: 300;
+  font-size: 13px;
+}
+
 @media screen and (max-width: 1200px) {
   .section1 .img-wrapper img {
     width: 75% !important;
@@ -518,6 +568,9 @@ header {
   .section4 .content__wrapper button {
     margin: 0 auto;
   }
+  .section6 .row .team_member {
+    width: 47%;
+  }
 }
 @media screen and (max-width: 992px) {
   .section1 .img-wrapper {
@@ -552,6 +605,18 @@ header {
   }
   .section3 button {
     margin: 0 auto;
+  }
+  .section6 p {
+    width: 80%;
+  }
+  .section6 .team_member h3 {
+    line-height: 18px !important;
+    font-size: 16px !important;
+    padding: 8px 32px !important;
+  }
+  .section6 .team_member h3 span {
+    font-weight: 300;
+    font-size: 13px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -596,5 +661,28 @@ header {
     left: 220px;
     top: 230px;
     position: absolute;
+  }
+  .section6 .team_member h3 {
+    width: 60%;
+    line-height: 18px !important;
+    font-size: 13px !important;
+    padding: 8px 25px !important;
+    left: 70px !important;
+  }
+  .section6 .team_member h3 span {
+    font-size: 12px !important;
+  }
+}
+@media screen and (max-width: 576px) {
+  .section6 .team_member h3 {
+    width: 65%;
+    line-height: 15px !important;
+    font-size: 13px !important;
+    padding: 5px 11px !important;
+    left: 40px !important;
+  }
+  .section6 .team_member h3 span {
+    font-weight: 300;
+    font-size: 13px;
   }
 }/*# sourceMappingURL=main.css.map */
