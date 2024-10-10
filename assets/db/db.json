@@ -1,0 +1,14 @@
+{
+    "blogs":[
+
+    ],
+    "users":[
+        {
+            "id":"1",
+            "username":"raksana",
+            "email":"raksana123@gmail.com",
+            "password":"raksana123",
+            "profileImg":"https://static.vecteezy.com/system/resources/thumbnails/033/662/051/small_2x/cartoon-lofi-young-manga-style-girl-while-listening-to-music-in-the-rain-ai-generative-photo.jpg"
+        }
+    ]
+}
