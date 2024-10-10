@@ -236,23 +236,88 @@ header {
   color: #909092;
 }
 
+.section3 {
+  margin-bottom: 50px;
+  margin-top: 90px;
+}
+.section3 .pet__content__wrapper {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 90px 0 0 80px;
+}
+.section3 .pet__content__wrapper h2 {
+  width: 100%;
+  font-size: 55px;
+}
+.section3 .pet__content__wrapper h2 span {
+  font-weight: 300;
+}
+.section3 .pet__content__wrapper p {
+  width: 80%;
+  color: #909092;
+}
+.section3 .pet__content__wrapper button {
+  width: 200px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  background-color: #ff3500;
+  padding: 17px 50px;
+  border-radius: 30px;
+  z-index: 1;
+}
+.section3 .pet__content__wrapper button:hover {
+  cursor: pointer;
+}
+.section3 .img-wrapper {
+  display: block;
+  width: 40%;
+}
+.section3 .img-wrapper img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 @media screen and (max-width: 1200px) {
-  .img-wrapper img {
+  .section1 .img-wrapper img {
     width: 75% !important;
     left: 250px !important;
     top: 110px !important;
+  }
+  .section3 .pet__content__wrapper {
+    padding: 50px 0 0 50px;
+  }
+  .section3 .pet__content__wrapper h2 {
+    font-size: 45px;
+  }
+  .section3 .pet__content__wrapper button {
+    width: 180px;
+    font-size: 16px;
   }
 }
 @media screen and (max-width: 1070px) {
   .section2 .petCard {
     width: 45%;
   }
+  .section3 .pet__content__wrapper {
+    padding: 50px 0 0 50px;
+  }
+  .section3 .pet__content__wrapper h2 {
+    font-size: 35px;
+  }
+  .section3 .pet__content__wrapper p {
+    width: 100%;
+  }
 }
 @media screen and (max-width: 992px) {
-  .img-wrapper {
+  .section1 .img-wrapper {
     display: none !important;
   }
-  .img-wrapper img {
+  .section1 .img-wrapper img {
     display: none;
   }
   .section1 .content-wrapper {
@@ -264,6 +329,24 @@ header {
   .section2 .petCard {
     width: 45%;
   }
+  .section3 .row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .section3 .pet__content__wrapper {
+    padding: 0;
+    width: 100%;
+  }
+  .section3 .img-wrapper {
+    width: 60%;
+  }
+  .section3 h2 {
+    font-size: 30px;
+  }
+  .section3 button {
+    margin: 0 auto;
+  }
 }
 @media screen and (max-width: 768px) {
   .section1 .content-wrapper {
@@ -274,5 +357,9 @@ header {
   }
   .section2 .petCard {
     width: 80%;
+  }
+  .section3 .pet__content__wrapper h2 {
+    font-size: 28px;
+    width: 100%;
   }
 }/*# sourceMappingURL=main.css.map */
