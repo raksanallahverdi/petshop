@@ -1,0 +1,32 @@
+.section__blog__container{
+    padding-top: 70px;
+    margin-bottom: 600px;
+    .blogs{
+        width: 65%;
+        display: flex;
+        flex-direction: column;
+    }
+    .right-side{
+        width: 30%;
+
+    }
+    .blogDiv{
+        width:100%;
+    }
+    .blogDiv .img-wrapper{
+        border: 1px solid blue;
+       height: 60%;
+       width: 100%;
+        
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover ;
+        }
+
+    }
+   
+
+    
+
+}

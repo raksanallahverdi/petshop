@@ -895,6 +895,33 @@ footer a {
   color: white;
 }
 
+.section__blog__container {
+  padding-top: 70px;
+  margin-bottom: 600px;
+}
+.section__blog__container .blogs {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+}
+.section__blog__container .right-side {
+  width: 30%;
+}
+.section__blog__container .blogDiv {
+  width: 100%;
+}
+.section__blog__container .blogDiv .img-wrapper {
+  border: 1px solid blue;
+  height: 60%;
+  width: 100%;
+}
+.section__blog__container .blogDiv .img-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .contact {
   margin-bottom: 90px;
 }

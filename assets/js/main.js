@@ -82,3 +82,5 @@ var swiper = new Swiper(".mySwiper", {
         headerBottom.classList.remove('fixed');
     }
 });
+
+
