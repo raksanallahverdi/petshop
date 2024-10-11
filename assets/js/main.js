@@ -74,4 +74,11 @@ var swiper = new Swiper(".mySwiper", {
         }
     }
   });
-  
+  window.addEventListener('scroll', function() {
+    var headerBottom = document.querySelector('.header-bottom');
+    if (window.scrollY > 400) {
+        headerBottom.classList.add('fixed');
+    } else {
+        headerBottom.classList.remove('fixed');
+    }
+});
