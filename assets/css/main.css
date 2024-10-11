@@ -176,6 +176,20 @@ header {
   height: 95px;
   width: 100%;
 }
+.header-bottom button {
+  width: 8rem;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  border: 1px solid transparent;
+  color: #ff3500;
+  padding: 5px 8px;
+  border-radius: 25px;
+  margin: 0;
+}
+.header-bottom button:hover {
+  cursor: pointer;
+  background-color: transparent;
+}
 .header-bottom i {
   font-size: 25px;
   display: none;
@@ -186,11 +200,16 @@ header {
 .header-bottom nav {
   display: flex;
   align-items: center;
-  gap: 45px;
+  gap: 35px;
 }
 .header-bottom nav a {
+  transition: all 0.3s ease;
   text-decoration: none;
   color: black;
+}
+.header-bottom nav a:hover {
+  cursor: pointer;
+  color: #ff3500;
 }
 
 @media screen and (max-width: 748px) {
