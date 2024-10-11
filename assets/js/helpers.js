@@ -3,7 +3,7 @@ import { API_BASE_URL, endpoints } from "./constants.js";
 // get All data 
 export async function getAllData(url, endpoint) {
     try {
-        const response = await axios.get(url, endpoint);
+        const response = await axios.get(`${url}${endpoint}`);
         console.log("STATUS CODE: ", response.status);
         return response.data;
     }

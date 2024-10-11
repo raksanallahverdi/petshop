@@ -99,15 +99,18 @@ h2{
 }
 
 @media screen and (max-width:992px) {
- .row{flex-direction: column;
-ul{
-    width: 100%;
-   
-}
-form{
-    width: 80%;
-}
-.short{
-    width: 100%;
-}}
+    .contact{
+        .row{flex-direction: column;
+            ul{
+                width: 100%;
+               
+            }
+            form{
+                width: 80%;
+            }
+            .short{
+                width: 100%;
+            }}
+    }
+
 }
