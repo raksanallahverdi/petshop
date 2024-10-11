@@ -1,6 +1,7 @@
 {
     "blogs": [
         {
+            "id": 1,
             "title": "The Rise of AI in Everyday Life",
             "description": "Exploring how AI is becoming an integral part of modern technology and day-to-day tasks. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
             "imageUrl": "https://dailygrind.ph/wp-content/uploads/2020/12/IMG_1452-scaled.jpeg",
@@ -9,6 +10,7 @@
             "createdBy": "John Doe"
         },
         {
+            "id": 2,
             "title": "Sustainable Living in Urban Areas",
             "description": "How cities are adapting sustainable practices for a greener future. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
             "imageUrl": "https://cdn.shopify.com/s/files/1/0095/2768/9282/files/photo-1491554150239-a9062e24de5c_1024x1024.jpg?v=1610094758",
@@ -17,6 +19,7 @@
             "createdBy": "Jane Smith"
         },
         {
+            "id": 3,
             "title": "The Future of Electric Vehicles",
             "description": "A deep dive into the technological advancements in electric vehicles and their impact. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
             "imageUrl": "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/mP4ZzogN4zHBqJey/food-blogging.jpeg-YNqXOoWgNOHrk4Xr.jpg",
@@ -25,6 +28,7 @@
             "createdBy": "Alex Johnson"
         },
         {
+            "id": 4,
             "title": "Healthy Eating Habits for a Busy Life",
             "description": "Tips and tricks to maintain a balanced diet even when you're on the go. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
             "imageUrl": "https://campuspress.com/wp-content/uploads/2016/09/kidsblogging-1qojw0k-1.jpeg",
@@ -33,6 +37,7 @@
             "createdBy": "Emily Davis"
         },
         {
+            "id": 5,
             "title": "Advancements in Quantum Computing",
             "description": "Understanding the breakthroughs in quantum computing and its future applications. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
             "imageUrl": "https://www.jacksonsart.com/blog/wp-content/uploads/2022/08/Ways_To_Sign_Your_Painting_Blog_Image-2.jpg",
@@ -41,6 +46,7 @@
             "createdBy": "Michael Brown"
         },
         {
+            "id": 6,
             "title": "Top Travel Destinations in 2024",
             "description": "Explore the most exciting travel destinations for the upcoming year. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
             "imageUrl": "https://blogs.nvidia.com/wp-content/uploads/2024/03/nvidia-robotics.jpg",
@@ -49,6 +55,7 @@
             "createdBy": "Sarah Wilson"
         },
         {
+            "id": 7,
             "title": "How to Achieve Work-Life Balance",
             "description": "Strategies to maintain a healthy balance between your professional and personal life. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
             "imageUrl": "https://www.iqoffices.com/static/31612698a5950b536bc818f3a5998323/47126/ZvLVxLVsGrYSv1wJ_Blogpage-6-.png",
@@ -57,6 +64,7 @@
             "createdBy": "Daniel Taylor"
         },
         {
+            "id": 8,
             "title": "Investing in Renewable Energy",
             "description": "Why renewable energy is the future and how to invest in this growing sector. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
             "imageUrl": "https://worldtravelfamily.com/wp-content/uploads/2012/07/Dubai-travel-blog-Where-to-stay-ultimate-luxury-prestige-hotels-Dubai-Beach-Resorts.jpg",

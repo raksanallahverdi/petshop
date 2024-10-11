@@ -119,19 +119,20 @@ let currentPage = 1;
     const paginatedItems = data.slice(start, end);
     blogsContainer.innerHTML = '';
     paginatedItems.forEach((blog) => {
-        console.log(blog);
+        console.log("blog",blog);
+        
+        console.log("blogid",blog.id);
         
         const createdTime=`${moment(blog.createdAt).format('D')}<br>${moment(blog.createdAt).format('MMM')}`;     
 
         blogsContainer.innerHTML += `
-        <div class="blogDiv">
+        <div data-id=${blog.id} class="blogDiv">
                         <div class="img-wrapper">
                             <img src="${blog.imageUrl}" alt="">
                         </div>
                        <div class="content-wrapper">
                      <div class="createdAt">${createdTime}</div>
-                   <i class="fa-regular fa-heart likeIcon"></i>
-                
+                   <i class="fa-regular fa-heart likeIcon"></i>            
                         <h2>${blog.title}</h2>
                         <p>${blog.description}</p>
                         <div class="row blogIcons">
@@ -154,14 +155,21 @@ let currentPage = 1;
         `
 
     });
+    const likeIcons = document.querySelectorAll(".likeIcon");
+    likeIcons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const blogDiv = btn.closest(".blogDiv");
+            console.log("Liked post:", blogDiv);
+        });
+    });
  }
- // Function to handle the Prev/Next button state
+
  function updateButtons() {
     document.getElementById('prevBtn').disabled = currentPage === 1;
     document.getElementById('nextBtn').disabled = currentPage === totalPages;
 }
 
-// Add event listeners for the Prev/Next buttons
+
 document.getElementById('prevBtn').addEventListener('click', (e) => {
 
     e.preventDefault();
@@ -181,7 +189,8 @@ document.getElementById('nextBtn').addEventListener('click', (e) => {
     }
 });
 
-// Initial display of data and button state
 displayData(fetchedBlogs, currentPage);
 updateButtons();
 })
+
+
