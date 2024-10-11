@@ -6,7 +6,6 @@
 }
 
 .row {
-  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -897,7 +896,7 @@ footer a {
 
 .section__blog__container {
   padding-top: 70px;
-  margin-bottom: 600px;
+  margin-bottom: 60px;
 }
 .section__blog__container .container {
   flex-direction: column;
@@ -905,26 +904,34 @@ footer a {
 .section__blog__container .blogAndRight {
   gap: 30px;
 }
-.section__blog__container #prevBtn, .section__blog__container #nextBtn {
-  margin: 20px 0;
+.section__blog__container .buttons {
+  height: 10vh;
+  width: 50%;
+  margin-top: 30px;
+  align-items: center;
+  justify-content: left;
+  gap: 0;
+}
+.section__blog__container #prevBtn,
+.section__blog__container #nextBtn {
   font-size: 14px;
-  position: relative;
+  margin-left: 40px;
   cursor: pointer;
-  display: block;
-  padding: 0;
-  text-align: center;
-  margin-left: -1px;
-  line-height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: rgba(239, 243, 247, 0.48);
   width: 45px;
   height: 45px;
   border-radius: 0 !important;
   color: #dd1515;
   border: 1px solid #f0e9ff;
-  margin-right: 10px;
+}
+.section__blog__container .wrappersBlog {
+  width: 65%;
 }
 .section__blog__container .blogs {
-  width: 65%;
+  width: 100%;
   display: flex;
   gap: 60px;
   flex-direction: column;
@@ -949,6 +956,16 @@ footer a {
   height: fit-content;
   box-shadow: 0px 16px 35px 0px rgba(0, 0, 2, 0.144);
   width: 100%;
+}
+.section__blog__container .blogs .blogDiv .likeIcon {
+  font-size: 25px;
+  position: absolute;
+  right: 35px;
+  top: 12px;
+}
+.section__blog__container .blogs .blogDiv .likeIcon:hover {
+  color: red;
+  cursor: pointer;
 }
 .section__blog__container .blogs .blogDiv .content-wrapper {
   position: relative;
@@ -994,22 +1011,7 @@ footer a {
 .section__blog__container .right-side {
   width: 30%;
 }
-.section__blog__container .right-side .search {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  background: #fbf9ff;
-  padding: 30px;
-  width: 100%;
-  position: relative;
-}
-.section__blog__container .right-side .search i {
-  position: absolute;
-  right: 45px;
-  top: 42px;
-  color: rgba(153, 153, 153, 0.862745098);
-}
-.section__blog__container .right-side .search input {
+.section__blog__container .right-side input {
   font-size: 13px;
   color: #999999;
   padding-left: 20px;
@@ -1017,7 +1019,7 @@ footer a {
   height: 40px;
   width: 100%;
 }
-.section__blog__container .right-side .search button {
+.section__blog__container .right-side button {
   height: 60px;
   background: #fff;
   color: #ff3500;
@@ -1034,6 +1036,42 @@ footer a {
   text-transform: uppercase;
   cursor: pointer;
   width: 100%;
+  transition: all 0.7s ease;
+}
+.section__blog__container .right-side button:hover {
+  background-color: #eb592d;
+  color: white !important;
+  letter-spacing: 7px;
+}
+.section__blog__container .right-side h3 {
+  font-weight: 500;
+}
+.section__blog__container .right-side .img-wrapper {
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.section__blog__container .right-side .img-wrapper img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  width: 80px;
+  height: 80px;
+}
+.section__blog__container .right-side .search {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #fbf9ff;
+  padding: 30px;
+  width: 100%;
+  position: relative;
+}
+.section__blog__container .right-side .search i {
+  position: absolute;
+  right: 45px;
+  top: 42px;
+  color: rgba(153, 153, 153, 0.862745098);
 }
 .section__blog__container .right-side .category {
   margin-top: 30px;
@@ -1057,13 +1095,114 @@ footer a {
 .section__blog__container .right-side .category p:hover {
   color: black;
 }
+.section__blog__container .right-side .recents {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #fbf9ff;
+  padding: 30px;
+  width: 100%;
+  font-size: 18px;
+}
+.section__blog__container .right-side .recents .recentPost {
+  display: flex;
+}
+.section__blog__container .right-side .recents .recentPost div {
+  font-size: 14px;
+  justify-content: center;
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.section__blog__container .right-side .recents .recentPost div span {
+  color: #999999;
+}
+.section__blog__container .right-side .recents .recentPost div h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 145px;
+}
+.section__blog__container .right-side .recents h3 {
+  font-weight: 500;
+}
+.section__blog__container .right-side .tagClouds {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #fbf9ff;
+  padding: 30px;
+  width: 100%;
+  font-size: 18px;
+}
+.section__blog__container .right-side .tagClouds .row {
+  gap: 10px;
+}
+.section__blog__container .right-side .tagClouds .row div {
+  cursor: pointer;
+  border: 1px solid #eeeeee;
+  background: #fff;
+  padding: 4px 20px;
+  margin-bottom: 8px;
+  transition: all 0.3s ease 0s;
+  color: #888888;
+  font-size: 13px;
+}
+.section__blog__container .right-side .tagClouds .row div:hover {
+  color: black;
+  background-color: #eb592d;
+  color: white;
+}
+.section__blog__container .right-side .feeds {
+  margin-top: 30px;
+  background: #fbf9ff;
+  padding: 30px;
+  width: 100%;
+  font-size: 18px;
+}
+.section__blog__container .right-side .feeds .instagramFeeds {
+  margin-top: 30px;
+  gap: 8px;
+  display: flex;
+}
+.section__blog__container .right-side .feeds .img-wrapper {
+  cursor: pointer;
+}
+.section__blog__container .right-side .feeds .img-wrapper img {
+  width: 85px;
+  height: 85px;
+}
+.section__blog__container .right-side .newsletter {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #fbf9ff;
+  padding: 30px;
+  width: 100%;
+  font-size: 18px;
+}
 
+@media screen and (max-width: 1200px) {
+  .blogAndRight .right-side .recents .recentPost h3 {
+    width: 95px !important;
+  }
+}
 @media screen and (max-width: 992px) {
   .section__blog__container .blogAndRight {
     flex-direction: column;
   }
-  .section__blog__container .blogs {
+  .section__blog__container .right-side {
     width: 100%;
+  }
+  .section__blog__container .wrappersBlog {
+    width: 100%;
+  }
+  .section__blog__container .blogAndRight .right-side .recents .recentPost h3 {
+    width: -moz-fit-content !important;
+    width: fit-content !important;
   }
 }
 .contact {

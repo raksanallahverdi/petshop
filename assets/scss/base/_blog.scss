@@ -1,202 +1,399 @@
 .section__blog__container {
     padding-top: 70px;
-    margin-bottom: 600px;
+    margin-bottom: 60px;
+
     .container {
         flex-direction: column;
     }
-    .blogAndRight{
+
+    .blogAndRight {
         gap: 30px;
     }
-  
-    #prevBtn, #nextBtn{
-        margin: 20px 0;
+.buttons{
+    height: 10vh;
+    width: 50%;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: left;
+    gap: 0;
+}
+    #prevBtn,
+    #nextBtn {
         font-size: 14px;
-    position: relative;
-    cursor: pointer;
-    display: block;
-    padding: 0;
-    text-align: center;
-    margin-left: -1px;
-    line-height: 45px;
-    background-color: rgba(239, 243, 247, 0.48);
-    width: 45px;
-    height: 45px;
-    border-radius: 0 !important;
-    color: #dd1515;
-    border: 1px solid #f0e9ff;
-    margin-right: 10px;
+        margin-left: 40px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(239, 243, 247, 0.48);
+        width: 45px;
+        height: 45px;
+        border-radius: 0 !important;
+        color: #dd1515;
+        border: 1px solid #f0e9ff;
     }
-
+   .wrappersBlog{
+    width: 65%;
+   }
     .blogs {
-        width: 65%;
+       width: 100%;
         display: flex;
         gap: 60px;
         flex-direction: column;
 
-    .createdAt {
-        font-size: 20px;
-        width: 90px;
-        height: 90px;
-        position: absolute;
-        top: -20%;
-        left: 35px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: white;
-        background-color: #eb592d;
-        border-radius: 5px;
+        .createdAt {
+            font-size: 20px;
+            width: 90px;
+            height: 90px;
+            position: absolute;
+            top: -20%;
+            left: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background-color: #eb592d;
+            border-radius: 5px;
+        }
+
+        .blogDiv {
+            height: fit-content;
+
+            box-shadow: 0px 16px 35px 0px rgba(0, 0, 2, 0.144);
+            .likeIcon{
+                font-size: 25px;
+                position: absolute;
+                right: 35px;
+                top: 12px;
+                &:hover{
+                    color: red;
+                    cursor: pointer;
+                }
+
+            }
+
+            .content-wrapper {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                height: 40%;
+                padding: 50px 30px 10px 30px;
+            }
+
+            width:100%;
+
+            .blogIcons {
+                height: fit-content;
+                margin-bottom: 10px;
+                text-align: left;
+
+                .row {
+
+                    align-items: center
+                }
+
+                width: 100%;
+                flex-direction: row;
+                gap: 40px;
+                color: #909092;
+
+                div {
+                    gap: 5px;
+                    align-items: center;
+                    font-size: 16px;
+                    width: fit-content;
+                }
+            }
+
+            h4 {
+                font-weight: 400;
+            }
+
+        }
+
+        .blogDiv .img-wrapper {
+            height: 60%;
+            width: 100%;
+
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        }
     }
 
-    .blogDiv {
-        height: fit-content;
-     
-        box-shadow: 0px 16px 35px 0px rgba(0, 0, 2, 0.144);
+    .right-side {
+        input {
 
-        .content-wrapper {
-            position: relative;
+            font-size: 13px;
+            color: #999999;
+            padding-left: 20px;
+            border: 1px solid #f0e9ff;
+            height: 40px;
+            width: 100%;
+        }
+
+        button {
+            height: 60px;
+            background: #fff;
+            color: #ff3500;
+            display: inline-block;
+            padding: 18px 44px;
+            font-family: "Poppins", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            border: 0;
+            border: 1px solid #ff3500;
+            letter-spacing: 3px;
+            text-align: center;
+            color: #ff3500 !important;
+            text-transform: uppercase;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.7s ease;
+            &:hover{
+                background-color: #eb592d;
+                color: white !important;
+                letter-spacing: 7px;
+            }
+
+        }
+
+        width: 30%;
+
+        h3 {
+
+            font-weight: 500;
+        }
+
+        .img-wrapper {
+            display: block;
+           
+            object-fit: cover ;
+
+            img {
+                object-fit: cover ;
+                display: block;
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        .search {
             display: flex;
             flex-direction: column;
             gap: 20px;
-            height: 40%;
-            padding: 50px 30px 10px 30px;
+            background: #fbf9ff;
+            padding: 30px;
+            width: 100%;
+            position: relative;
+
+            i {
+                position: absolute;
+                right: 45px;
+                top: 42px;
+                color: #999999dc;
+            }
+
         }
 
-        width:100%;
+        .category {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background: #fbf9ff;
+            padding: 30px;
+            width: 100%;
+            font-size: 18px;
 
-        .blogIcons {
-            height: fit-content;
-            margin-bottom: 10px;
-            text-align: left;
+            h3 {
+
+                font-weight: 500;
+            }
+
+            p {
+                transition: all 0.3 ease;
+                font-size: 16px;
+                cursor: pointer;
+                color: grey;
+
+                &:hover {
+                    color: black;
+                }
+            }
+        }
+
+        .recents {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background: #fbf9ff;
+            padding: 30px;
+            width: 100%;
+            font-size: 18px;
+
+            .recentPost {
+                display: flex;
+
+                div {
+                    span {
+                        color: #999999;
+                    }
+
+                    h3 {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        width: 145px;
+
+                    }
+
+                    font-size: 14px;
+                    justify-content: center;
+                    margin-left: 15px;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+            }
+
+            h3 {
+
+                font-weight: 500;
+            }
+
+        }
+
+        .tagClouds {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background: #fbf9ff;
+            padding: 30px;
+            width: 100%;
+            font-size: 18px;
 
             .row {
-                
-                align-items: center
+                gap: 10px;
+
+                div {
+                    cursor: pointer;
+                    border: 1px solid #eeeeee;
+                    background: #fff;
+                    padding: 4px 20px;
+                    margin-bottom: 8px;
+                    transition: all 0.3s ease 0s;
+                    color: #888888;
+                    font-size: 13px;
+
+                    &:hover {
+                        color: black;
+                        background-color: #eb592d;
+                        color: white;
+                    }
+                }
             }
 
-            width: 100%;
-            flex-direction: row;
-            gap: 40px;
-            color: #909092;
+        }
 
-            div {
-                gap: 5px;
-                align-items: center;
-                font-size: 16px;
-                width: fit-content;
+        .feeds {
+
+            margin-top: 30px;
+            background: #fbf9ff;
+            padding: 30px;
+            width: 100%;
+            font-size: 18px;
+
+            .instagramFeeds {
+                margin-top: 30px;
+                gap: 8px;
+                display: flex;
+            }
+
+            .img-wrapper {
+                cursor: pointer;
+              
+                img{
+                    width: 85px;
+                    height: 85px;
+                }
+            }
+
+        }
+
+        .newsletter {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background: #fbf9ff;
+            padding: 30px;
+            width: 100%;
+            font-size: 18px;
+        }
+    }
+
+
+
+
+
+
+
+}
+
+@media screen and (max-width:1200px) {
+    .blogAndRight{
+        .right-side{
+            .recents {
+                .recentPost{
+                    h3{
+                        width: 95px !important;
+                    }
+    
+                }
+               
             }
         }
-
-        h4 {
-            font-weight: 400;
-        }
-
     }
-
-    .blogDiv .img-wrapper {
-        height: 60%;
-        width: 100%;
-      
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-    }
-    }
-    .right-side {
-        width: 30%;
-.search{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    background: #fbf9ff;
-    padding: 30px;
-    width: 100%;
-    position: relative;
-    i{
-        position: absolute;
-        right: 45px;
-        top: 42px;
-        color:#999999dc;
-    }
-    input{
-      
-    font-size: 13px;
-    color: #999999;
-    padding-left: 20px;
-    border: 1px solid #f0e9ff;
-        height: 40px;
-        width: 100%;
-    }
-    button{
-        height: 60px;
-        background: #fff;
-    color: #ff3500;
-    display: inline-block;
-    padding: 18px 44px;
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    border: 0;
-    border: 1px solid #ff3500;
-    letter-spacing: 3px;
-    text-align: center;
-    color: #ff3500 !important;
-    text-transform: uppercase;
-    cursor: pointer;
-        width: 100%;
-    }
-}
-.category{
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    background: #fbf9ff;
-    padding: 30px;
-    width: 100%;
-    font-size: 18px;
-    h3{
-
-        font-weight: 500;
-    }
-    p{
-        transition: all 0.3 ease;
-        font-size: 16px;
-        cursor: pointer;
-        color: grey;
-        &:hover{
-            color: black;
-        }
-    }
-}
-    }
-
-   
-
-
-
 
 
 }
-
 @media screen and (max-width:992px) {
     .section__blog__container {
-        .blogAndRight{
+        .blogAndRight {
             flex-direction: column;
-          }
-          .blogs{
-             width: 100%;
-          }
+        }
+        .right-side{
+            width: 100%;
+        }
+
+        .wrappersBlog {
+            width: 100%;
+        } 
+        .blogAndRight{
+            .right-side{
+                .recents {
+                    .recentPost{
+                        h3{
+                            width: fit-content !important;
+                        }
         
+                    }
+                   
+                }
+            }
+        }    
+
 
     }
 
 
-    }
-
-
+}

@@ -130,6 +130,7 @@ let currentPage = 1;
                         </div>
                        <div class="content-wrapper">
                      <div class="createdAt">${createdTime}</div>
+                   <i class="fa-regular fa-heart likeIcon"></i>
                 
                         <h2>${blog.title}</h2>
                         <p>${blog.description}</p>
