@@ -1,6 +1,7 @@
 const counted = document.querySelector(".second_count_number");
 import { endpoints } from "./constants.js";
-import { getAllData } from "./helpers.js"
+import { getAllData } from "./helpers.js";
+let localBlogs = JSON.parse(localStorage.getItem("blog")) || [];
 import { API_BASE_URL } from "./constants.js"
 const countedFirst = document.querySelector(".first_count_number");
 const countedLast = document.querySelector(".third_count_number");
@@ -60,8 +61,6 @@ if (countedLast) {
     document.addEventListener('DOMContentLoaded', animateResultCountSlow(1, 52, countedLast));
 }
 
-
-
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 3,
     centeredSlides: true,
@@ -100,32 +99,26 @@ window.addEventListener('scroll', function () {
 
 
 
-
-
 document.addEventListener('DOMContentLoaded', async () => {
 
-const blogsContainer = document.querySelector(".blogs")
-const itemsPerPage = 4;
-let currentPage = 1;
+    const blogsContainer = document.querySelector(".blogs")
+    const itemsPerPage = 4;
+    let currentPage = 1;
     const fetchedBlogs = await getAllData(API_BASE_URL, endpoints.blogs);
+    let filteredBlogs = fetchedBlogs; 
     const totalPages = Math.ceil(fetchedBlogs.length / itemsPerPage);
     console.log(fetchedBlogs);
- 
-    
 
- function displayData(data,page){
-    const start = (page - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
-    const paginatedItems = data.slice(start, end);
-    blogsContainer.innerHTML = '';
-    paginatedItems.forEach((blog) => {
-        console.log("blog",blog);
-        
-        console.log("blogid",blog.id);
-        
-        const createdTime=`${moment(blog.createdAt).format('D')}<br>${moment(blog.createdAt).format('MMM')}`;     
 
-        blogsContainer.innerHTML += `
+
+    function displayData(data, page) {
+        const start = (page - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        const paginatedItems = data.slice(start, end);
+        blogsContainer.innerHTML = '';
+        paginatedItems.forEach((blog) => {
+            const createdTime = `${moment(blog.createdAt).format('D')}<br>${moment(blog.createdAt).format('MMM')}`;
+            blogsContainer.innerHTML += `
         <div data-id=${blog.id} class="blogDiv">
                         <div class="img-wrapper">
                             <img src="${blog.imageUrl}" alt="">
@@ -154,43 +147,97 @@ let currentPage = 1;
 
         `
 
-    });
-    const likeIcons = document.querySelectorAll(".likeIcon");
-    likeIcons.forEach((btn) => {
-        btn.addEventListener("click", () => {
-            const blogDiv = btn.closest(".blogDiv");
-            console.log("Liked post:", blogDiv);
         });
+
+      
+        
+
+
+
+
+
+        const likeIcons = document.querySelectorAll(".likeIcon");
+        likeIcons.forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+                const blogDiv = btn.closest(".blogDiv");
+                const blogId = blogDiv.getAttribute("data-id");
+                console.log("Liked post:", blogDiv);
+                if (e.target.classList.contains("fa-regular") && e.target.classList.contains("fa-heart")) {
+                    e.target.classList.add("fa-solid");
+                    e.target.classList.remove("fa-regular");
+                    if (!localBlogs.includes(blogId)) {
+                        localBlogs.push(blogId);
+                        localStorage.setItem("blog", JSON.stringify(localBlogs));
+                    }
+                }
+                else if(e.target.classList.contains("fa-solid") && e.target.classList.contains("fa-heart")){
+                    e.target.classList.remove("fa-solid");
+                    e.target.classList.add("fa-regular");
+                    localBlogs = localBlogs.filter((id) => id !== blogId);
+                    localStorage.setItem("blog", JSON.stringify(localBlogs));   
+                   }
+
+            });
+        });
+
+        const allCards=document.querySelectorAll(".blogDiv")
+        console.log(allCards);
+        allCards.forEach((card)=>{
+          const theCardId=card.getAttribute("data-id");
+          console.log("local BLOGS",localBlogs);
+          
+          if(localBlogs.includes(theCardId)){
+            const cardIcon=card.children[1].children[1];        
+            cardIcon.classList.add("fa-solid");
+            cardIcon.classList.remove("fa-regular");
+            
+          }
+    })
+
+
+
+    }
+
+    function updateButtons() {
+        document.getElementById('prevBtn').disabled = currentPage === 1;
+        document.getElementById('nextBtn').disabled = currentPage === totalPages;
+    }
+
+    const searchInput=document.querySelector(".searchInput");
+    searchInput.addEventListener("input", () => {
+        const searchTerm = searchInput.value.toUpperCase();
+        const filteredBlogs = fetchedBlogs.filter(blog => 
+            blog.title?.toUpperCase().includes(searchTerm)
+        );
+        currentPage=1;
+        const newTotalPages = Math.ceil(filteredBlogs.length / itemsPerPage);
+        displayData(filteredBlogs, currentPage);
+        updateButtons();
+        totalPages = newTotalPages; 
     });
- }
-
- function updateButtons() {
-    document.getElementById('prevBtn').disabled = currentPage === 1;
-    document.getElementById('nextBtn').disabled = currentPage === totalPages;
-}
 
 
-document.getElementById('prevBtn').addEventListener('click', (e) => {
+    document.getElementById('prevBtn').addEventListener('click', (e) => {
 
-    e.preventDefault();
-    if (currentPage > 1) {
-        currentPage--;
-        displayData(fetchedBlogs, currentPage);
-        updateButtons();
-    }
-});
+        e.preventDefault();
+        if (currentPage > 1) {
+            currentPage--;
+            displayData(filteredBlogs, currentPage);
+            updateButtons();
+        }
+    });
 
-document.getElementById('nextBtn').addEventListener('click', (e) => {
-    e.preventDefault();
-    if (currentPage < totalPages) {
-        currentPage++;
-        displayData(fetchedBlogs, currentPage);
-        updateButtons();
-    }
-});
+    document.getElementById('nextBtn').addEventListener('click', (e) => {
+        e.preventDefault();
+        if (currentPage < totalPages) {
+            currentPage++;
+            displayData(filteredBlogs, currentPage);
+            updateButtons();
+        }
+    });
 
-displayData(fetchedBlogs, currentPage);
-updateButtons();
+    displayData(filteredBlogs, currentPage);
+    updateButtons();
 })
 
 
