@@ -1,6 +1,69 @@
 {
-    "blogs":[
-
+    "blogs": [
+        {
+            "title": "The Rise of AI in Everyday Life",
+            "description": "Exploring how AI is becoming an integral part of modern technology and day-to-day tasks.",
+            "imageUrl": "https://dailygrind.ph/wp-content/uploads/2020/12/IMG_1452-scaled.jpeg",
+            "createdAt": "2024-10-01",
+            "categories": ["Technology", "AI"],
+            "createdBy": "John Doe"
+        },
+        {
+            "title": "Sustainable Living in Urban Areas",
+            "description": "How cities are adapting sustainable practices for a greener future.",
+            "imageUrl": "https://dailygrind.ph/wp-content/uploads/2020/12/IMG_1452-scaled.jpeg",
+            "createdAt": "2024-09-25",
+            "categories": ["Environment", "Lifestyle"],
+            "createdBy": "Jane Smith"
+        },
+        {
+            "title": "The Future of Electric Vehicles",
+            "description": "A deep dive into the technological advancements in electric vehicles and their impact.",
+            "imageUrl": "https://dailygrind.ph/wp-content/uploads/2020/12/IMG_1452-scaled.jpeg",
+            "createdAt": "2024-09-20",
+            "categories": ["Automotive", "Technology"],
+            "createdBy": "Alex Johnson"
+        },
+        {
+            "title": "Healthy Eating Habits for a Busy Life",
+            "description": "Tips and tricks to maintain a balanced diet even when you're on the go.",
+            "imageUrl": "https://dailygrind.ph/wp-content/uploads/2020/12/IMG_1452-scaled.jpeg",
+            "createdAt": "2024-09-15",
+            "categories": ["Health", "Lifestyle"],
+            "createdBy": "Emily Davis"
+        },
+        {
+            "title": "Advancements in Quantum Computing",
+            "description": "Understanding the breakthroughs in quantum computing and its future applications.",
+            "imageUrl": "https://dailygrind.ph/wp-content/uploads/2020/12/IMG_1452-scaled.jpeg",
+            "createdAt": "2024-09-10",
+            "categories": ["Technology", "Computing"],
+            "createdBy": "Michael Brown"
+        },
+        {
+            "title": "Top Travel Destinations in 2024",
+            "description": "Explore the most exciting travel destinations for the upcoming year.",
+            "imageUrl": "https://dailygrind.ph/wp-content/uploads/2020/12/IMG_1452-scaled.jpeg",
+            "createdAt": "2024-09-05",
+            "categories": ["Travel", "Lifestyle"],
+            "createdBy": "Sarah Wilson"
+        },
+        {
+            "title": "How to Achieve Work-Life Balance",
+            "description": "Strategies to maintain a healthy balance between your professional and personal life.",
+            "imageUrl": "https://dailygrind.ph/wp-content/uploads/2020/12/IMG_1452-scaled.jpeg",
+            "createdAt": "2024-08-28",
+            "categories": ["Productivity", "Lifestyle"],
+            "createdBy": "Daniel Taylor"
+        },
+        {
+            "title": "Investing in Renewable Energy",
+            "description": "Why renewable energy is the future and how to invest in this growing sector.",
+            "imageUrl": "https://dailygrind.ph/wp-content/uploads/2020/12/IMG_1452-scaled.jpeg",
+            "createdAt": "2024-08-21",
+            "categories": ["Finance", "Environment"],
+            "createdBy": "Laura Garcia"
+        }
     ],
     "users":[
         {

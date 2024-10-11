@@ -237,6 +237,8 @@ header {
   }
 }
 footer {
+  background-color: rgb(248, 248, 248);
+  padding-top: 70px;
   padding-bottom: 70px;
   color: rgb(122, 122, 122);
 }
@@ -257,6 +259,8 @@ footer .footerList {
   gap: 85px;
 }
 footer .icons {
+  display: flex;
+  flex-direction: row;
   gap: 20px;
 }
 footer h3 {
@@ -889,4 +893,114 @@ footer a {
 .section_banner h1 {
   font-size: 50px;
   color: white;
+}
+
+.contact {
+  margin-bottom: 90px;
+}
+.contact h2 {
+  text-align: left;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.contact .row.forms {
+  gap: 50px;
+  flex-wrap: wrap;
+}
+.contact .row.shorts {
+  justify-content: space-between;
+}
+.contact .container {
+  flex-direction: column;
+}
+.contact ul {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 30%;
+  list-style: none;
+}
+.contact ul li {
+  font-size: 18px;
+  display: flex;
+  gap: 15px;
+}
+.contact ul li h4 {
+  font-weight: 500;
+}
+.contact ul li span {
+  display: block;
+  font-weight: 300;
+  color: #8a8a8a;
+}
+.contact ul li i {
+  font-size: 26px;
+  color: #8a8a8a;
+}
+.contact iframe {
+  width: 100%;
+  margin: 80px auto;
+}
+.contact textarea {
+  font-size: 14px;
+  padding-left: 10px;
+  padding-top: 10px;
+  border: 1px solid;
+  border-color: #e5e6e9;
+  height: 200px;
+  resize: none;
+  width: 100%;
+}
+.contact form {
+  width: 65%;
+}
+.contact form button {
+  transition: all 0.4s ease;
+  background: #fff;
+  color: #ff3500;
+  display: inline-block;
+  padding: 18px 44px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  border: 0;
+  border: 1px solid #ff3500;
+  letter-spacing: 3px;
+  text-align: center;
+  color: #ff3500 !important;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 40px;
+}
+.contact form button:hover {
+  background-color: #ff3500;
+  color: white !important;
+}
+.contact .short {
+  width: 46%;
+}
+.contact input {
+  padding-left: 10px;
+  border: 1px solid;
+  border-color: #e5e6e9;
+  margin-top: 30px;
+  height: 50px;
+}
+.contact .long {
+  width: 100%;
+}
+
+@media screen and (max-width: 992px) {
+  .row {
+    flex-direction: column;
+  }
+  .row ul {
+    width: 100%;
+  }
+  .row form {
+    width: 80%;
+  }
+  .row .short {
+    width: 100%;
+  }
 }/*# sourceMappingURL=main.css.map */
