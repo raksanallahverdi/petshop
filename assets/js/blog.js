@@ -3,7 +3,7 @@ const feedsContainer=document.querySelector(".instagramFeeds");
 const tagCloudsContainer=document.querySelector(".clouds");
 const recentsContainer=document.querySelector(".recents");
 import { API_BASE_URL, endpoints } from "./constants.js";
-import {getAllData} from "./helpers.js"
+import {getAllData} from "./helpers.js";
 document.addEventListener("DOMContentLoaded",async()=>{
     const categories=await getAllData(API_BASE_URL,endpoints.categories);
     categories.forEach(category => {

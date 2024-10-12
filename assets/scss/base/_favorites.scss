@@ -1,10 +1,21 @@
 .favorites{
 }
 .wishlist-wrapper{
+    padding-bottom: 70px;
+    margin-bottom: 50px;
     display: flex;
     flex-direction: column;
     gap: 10px;
     .wishedElement{
+        .deleteIcon{
+           font-size: 24px;
+           margin-right: 14px;
+            color: red;
+            &:hover{
+                cursor: pointer;
+            }
+
+        }
         p{
             color: rgb(120, 120, 120);
         }

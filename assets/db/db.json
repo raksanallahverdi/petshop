@@ -1,133 +1,205 @@
 {
-    "blogs": [
-        {
-            "id": 1,
-            "title": "The Rise of AI in Everyday Life",
-            "description": "Exploring how AI is becoming an integral part of modern technology and day-to-day tasks. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
-            "imageUrl": "https://dailygrind.ph/wp-content/uploads/2020/12/IMG_1452-scaled.jpeg",
-            "createdAt": "2024-10-01",
-            "categories": ["Technology", "Health"],
-            "createdBy": "John Doe"
-        },
-        {
-            "id": 2,
-            "title": "Sustainable Living in Urban Areas",
-            "description": "How cities are adapting sustainable practices for a greener future. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
-            "imageUrl": "https://cdn.shopify.com/s/files/1/0095/2768/9282/files/photo-1491554150239-a9062e24de5c_1024x1024.jpg?v=1610094758",
-            "createdAt": "2024-09-25",
-            "categories": ["Environment", "Lifestyle"],
-            "createdBy": "Jane Smith"
-        },
-        {
-            "id": 3,
-            "title": "The Future of Electric Vehicles",
-            "description": "A deep dive into the technological advancements in electric vehicles and their impact. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
-            "imageUrl": "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/mP4ZzogN4zHBqJey/food-blogging.jpeg-YNqXOoWgNOHrk4Xr.jpg",
-            "createdAt": "2024-09-20",
-            "categories": ["Automotive", "Travel"],
-            "createdBy": "Alex Johnson"
-        },
-        {
-            "id": 4,
-            "title": "Healthy Eating Habits for a Busy Life",
-            "description": "Tips and tricks to maintain a balanced diet even when you're on the go. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
-            "imageUrl": "https://campuspress.com/wp-content/uploads/2016/09/kidsblogging-1qojw0k-1.jpeg",
-            "createdAt": "2024-09-15",
-            "categories": ["Health", "Lifestyle"],
-            "createdBy": "Emily Davis"
-        },
-        {
-            "id": 5,
-            "title": "Advancements in Quantum Computing",
-            "description": "Understanding the breakthroughs in quantum computing and its future applications. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
-            "imageUrl": "https://www.jacksonsart.com/blog/wp-content/uploads/2022/08/Ways_To_Sign_Your_Painting_Blog_Image-2.jpg",
-            "createdAt": "2024-09-10",
-            "categories": ["Technology", "Finance"],
-            "createdBy": "Michael Brown"
-        },
-        {
-            "id": 6,
-            "title": "Top Travel Destinations in 2024",
-            "description": "Explore the most exciting travel destinations for the upcoming year. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
-            "imageUrl": "https://blogs.nvidia.com/wp-content/uploads/2024/03/nvidia-robotics.jpg",
-            "createdAt": "2024-09-05",
-            "categories": ["Travel", "Lifestyle"],
-            "createdBy": "Sarah Wilson"
-        },
-        {
-            "id": 7,
-            "title": "How to Achieve Work-Life Balance",
-            "description": "Strategies to maintain a healthy balance between your professional and personal life. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
-            "imageUrl": "https://www.iqoffices.com/static/31612698a5950b536bc818f3a5998323/47126/ZvLVxLVsGrYSv1wJ_Blogpage-6-.png",
-            "createdAt": "2024-08-28",
-            "categories": ["Technology", "Lifestyle"],
-            "createdBy": "Daniel Taylor"
-        },
-        {
-            "id": 8,
-            "title": "Investing in Renewable Energy",
-            "description": "Why renewable energy is the future and how to invest in this growing sector. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
-            "imageUrl": "https://worldtravelfamily.com/wp-content/uploads/2012/07/Dubai-travel-blog-Where-to-stay-ultimate-luxury-prestige-hotels-Dubai-Beach-Resorts.jpg",
-            "createdAt": "2024-08-21",
-            "categories": ["Finance", "Environment"],
-            "createdBy": "Laura Garcia"
-        }
-    ],
-    "users":[
-        {
-            "id":"1",
-            "username":"raksana",
-            "email":"raksana123@gmail.com",
-            "password":"raksana123",
-            "profileImg":"https://static.vecteezy.com/system/resources/thumbnails/033/662/051/small_2x/cartoon-lofi-young-manga-style-girl-while-listening-to-music-in-the-rain-ai-generative-photo.jpg"
-        }
-    ],
-    "categories":[
-        {
-            "id":"1",
-            "name":"Technology",
-            "count":"15"
-
-        },
-        {
-            "id":"2",
-            "name":"Travel",
-            "count":"20"
-
-        },
-        {
-            "id":"3",
-            "name":"Environment",
-            "count":"17"
-
-        },
-        {
-            "id":"4",
-            "name":"Lifestyle",
-            "count":"10"
-
-        },
-        {
-            "id":"5",
-            "name":"Automotive",
-            "count":"13"
-
-        },
-        {
-            "id":"6",
-            "name":"Health",
-            "count":"11"
-
-        },
-        {
-            "id":"7",
-            "name":"Finance",
-            "count":"16"
-
-        }
-
-
-    ]
-
-  
+  "blogs": [
+    {
+      "id": "1",
+      "title": "The Rise of AI in Everyday Life",
+      "description": "Exploring how AI is becoming an integral part of modern technology and day-to-day tasks. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+      "imageUrl": "https://dailygrind.ph/wp-content/uploads/2020/12/IMG_1452-scaled.jpeg",
+      "createdAt": "2024-10-01",
+      "categories": [
+        "Technology",
+        "Health"
+      ],
+      "createdBy": "John Doe"
+    },
+    {
+      "id": "2",
+      "title": "Sustainable Living in Urban Areas",
+      "description": "How cities are adapting sustainable practices for a greener future. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0095/2768/9282/files/photo-1491554150239-a9062e24de5c_1024x1024.jpg?v=1610094758",
+      "createdAt": "2024-09-25",
+      "categories": [
+        "Environment",
+        "Lifestyle"
+      ],
+      "createdBy": "Jane Smith"
+    },
+    {
+      "id": "3",
+      "title": "The Future of Electric Vehicles",
+      "description": "A deep dive into the technological advancements in electric vehicles and their impact. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+      "imageUrl": "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/mP4ZzogN4zHBqJey/food-blogging.jpeg-YNqXOoWgNOHrk4Xr.jpg",
+      "createdAt": "2024-09-20",
+      "categories": [
+        "Automotive",
+        "Travel"
+      ],
+      "createdBy": "Alex Johnson"
+    },
+    {
+      "id": "4",
+      "title": "Healthy Eating Habits for a Busy Life",
+      "description": "Tips and tricks to maintain a balanced diet even when you're on the go. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+      "imageUrl": "https://campuspress.com/wp-content/uploads/2016/09/kidsblogging-1qojw0k-1.jpeg",
+      "createdAt": "2024-09-15",
+      "categories": [
+        "Health",
+        "Lifestyle"
+      ],
+      "createdBy": "Emily Davis"
+    },
+    {
+      "id": "5",
+      "title": "Advancements in Quantum Computing",
+      "description": "Understanding the breakthroughs in quantum computing and its future applications. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+      "imageUrl": "https://www.jacksonsart.com/blog/wp-content/uploads/2022/08/Ways_To_Sign_Your_Painting_Blog_Image-2.jpg",
+      "createdAt": "2024-09-10",
+      "categories": [
+        "Technology",
+        "Finance"
+      ],
+      "createdBy": "Michael Brown"
+    },
+    {
+      "id": "6",
+      "title": "Top Travel Destinations in 2024",
+      "description": "Explore the most exciting travel destinations for the upcoming year. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+      "imageUrl": "https://blogs.nvidia.com/wp-content/uploads/2024/03/nvidia-robotics.jpg",
+      "createdAt": "2024-09-05",
+      "categories": [
+        "Travel",
+        "Lifestyle"
+      ],
+      "createdBy": "Sarah Wilson"
+    },
+    {
+      "id": "7",
+      "title": "How to Achieve Work-Life Balance",
+      "description": "Strategies to maintain a healthy balance between your professional and personal life. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+      "imageUrl": "https://www.iqoffices.com/static/31612698a5950b536bc818f3a5998323/47126/ZvLVxLVsGrYSv1wJ_Blogpage-6-.png",
+      "createdAt": "2024-08-28",
+      "categories": [
+        "Technology",
+        "Lifestyle"
+      ],
+      "createdBy": "Daniel Taylor"
+    },
+    {
+      "id": "8",
+      "title": "Investing in Renewable Energy",
+      "description": "Why renewable energy is the future and how to invest in this growing sector. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+      "imageUrl": "https://worldtravelfamily.com/wp-content/uploads/2012/07/Dubai-travel-blog-Where-to-stay-ultimate-luxury-prestige-hotels-Dubai-Beach-Resorts.jpg",
+      "createdAt": "2024-08-21",
+      "categories": [
+        "Finance",
+        "Environment"
+      ],
+      "createdBy": "Laura Garcia"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "raksanall",
+      "email": "raksana123@gmail.com",
+      "password": "raksana123"
+    },
+    {
+      "id": "c7e2",
+      "username": "nigarx",
+      "email": "nigar123@gmail.com",
+      "password": "nigar123"
+    },
+    {
+      "id": "68fb",
+      "username": "lemanx",
+      "email": "leman123@gmail.com",
+      "password": "leman123"
+    },
+    {
+      "id": "6a9d",
+      "username": "selimx",
+      "email": "selim123@gmail.com",
+      "password": "selim123"
+    },
+    {
+      "id": "bd8e",
+      "username": "nurayx",
+      "email": "nuray123@gmail.com",
+      "password": "nuray123"
+    },
+    {
+      "id": "6538",
+      "username": "turanx",
+      "email": "turan123@gmail.com",
+      "password": "turan123"
+    },
+    {
+      "id": "369a",
+      "username": "samirx",
+      "email": "samir123@gmail.com",
+      "password": "samir123"
+    },
+    {
+      "id": "c15e",
+      "username": "senanx",
+      "email": "senan123@gmail.com",
+      "password": "senan123"
+    },
+    {
+      "id": "06db",
+      "username": "raksana123",
+      "email": "raksana1234@gmail.com",
+      "password": "raksanaa12"
+    },
+    {
+      "id": "04d9",
+      "username": "salam345",
+      "email": "salammm@mail.ru",
+      "password": "salam123"
+    },
+    {
+      "id": "927d",
+      "username": "raksana",
+      "email": "raksana@mail.ru",
+      "password": "raksana123"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Technology",
+      "count": "15"
+    },
+    {
+      "id": "2",
+      "name": "Travel",
+      "count": "20"
+    },
+    {
+      "id": "3",
+      "name": "Environment",
+      "count": "17"
+    },
+    {
+      "id": "4",
+      "name": "Lifestyle",
+      "count": "10"
+    },
+    {
+      "id": "5",
+      "name": "Automotive",
+      "count": "13"
+    },
+    {
+      "id": "6",
+      "name": "Health",
+      "count": "11"
+    },
+    {
+      "id": "7",
+      "name": "Finance",
+      "count": "16"
+    }
+  ]
 }

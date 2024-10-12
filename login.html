@@ -37,25 +37,95 @@
         </div>
         <div class="header-bottom">
             <div class="container">
-                <a href="">
+                <a class="logo" href="">
                     <img src="./assets/images/logo.png.webp" alt="">
                 </a>
-                <i class="fa-solid fa-bars"></i>
-                <nav>
+                <i class="fa-solid fa-bars burgerMenu"></i>
+                <nav class="mainNav">
                     <a href="./index.html">Home</a>
                     <a href="./about.html">About</a>
                     <a href="./blog.html">Blog</a>
                     <a href="./services.html">Services</a>
                     <a href="./contact.html">Contact</a>
-                    <a href="./favorites.html">Favorites</a>
-                    <a href="./addBlog.html"><button>+ Add Blog</button></a>
+                    <a class="favoritesLink" href="./favorites.html">Favorites</a>
+                    <a class="loginLink" href="./login.html">Login</a>
+                    <a class="registerLink" href="./register.html">Register</a>
+                    <a class="no-underline" href="./addBlog.html"><button>+ Add Blog</button></a>
+                    <a class="no-underline" href=""> <i class="fa-solid fa-arrow-right-from-bracket logOut" ></i></a>
                 </nav>
+                <div class="responsiveMenu">
+                    <nav>
+                        <a href="./index.html">Home</a>
+                        <a href="./about.html">About</a>
+                        <a href="./blog.html">Blog</a>
+                        <a href="./services.html">Services</a>
+                        <a href="./contact.html">Contact</a>
+                        <a class="favoritesLink" href="./favorites.html">Favorites</a>
+                        <a class="blogBtn" href="./addBlog.html">Add Blog</a>
+                        <a class="logOutLink" href="">Log Out</a>
+                        <a class="loginLink respLogin" href="./login.html">Login</a>
+                        <a class="registerLink respRegister" href="./register.html">Register</a>
+                    </nav>
+                </div>
             </div>
         </div>
     </header>
+    <section class="loginSection">
+        <div class="container">
+            <div class="container" id="container">
+                <div class="form-container sign-up-container">
+                    <form  class="registerForm" action="#">
+                        <h1>Create Account</h1>
+                        <div class="social-container">
+                            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                        <span>or use your email for registration</span>
+                        <input type="text" placeholder="Name" />
+                        <input type="email" placeholder="Email" />
+                        <input type="password" placeholder="Password" />
+                        <button type="submit" class="registerBtn">Sign Up</button>
+                    </form>
+                </div>
+                <div class="form-container sign-in-container">
+                    <form class="loginForm" action="#">
+                        <h1>Sign in</h1>
+                        <div class="social-container">
+                            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                        <span>or use your account</span>
+                        <input type="text" placeholder="Username" />
+                        <input type="password" placeholder="Password" />
+                        <a href="#">Forgot your password?</a>
+                        <button class="loginBtn">Sign In</button>
+                    </form>
+                </div>
+                <div class="overlay-container">
+                    <div class="overlay">
+                        <div class="overlay-panel overlay-left">
+                            <h1>Welcome Back!</h1>
+                            <p>To keep connected with us please login with your personal info</p>
+                            <button class="ghost" id="signIn">Sign In</button>
+                        </div>
+                        <div class="overlay-panel overlay-right">
+                            <h1>Hello, Friend!</h1>
+                            <p>Enter your personal details and start journey with us</p>
+                            <button class="ghost" id="signUp">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"
         integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>

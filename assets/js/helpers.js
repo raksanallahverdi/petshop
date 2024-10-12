@@ -43,7 +43,7 @@ export async function deleteDataById(url, endpoint, id) {
 // add movie to data
 export async function addData(url, endpoint, data) {
     try {
-        const response = await axios.post(url, endpoint, data); // Change PUT to POST
+        const response = await axios.post(`${url}${endpoint}`, data); // Change PUT to POST
         console.log("Add STATUS CODE: ", response.status);
         return response.data;
     } catch (error) {
@@ -70,6 +70,7 @@ export async function checkUser() {
     // check user id from API 
     const user = await getDataById(API_BASE_URL, endpoints.users, userId);
     console.log(user);   
+    
     if (userId) return true;
     else return false;
 

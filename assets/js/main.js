@@ -4,6 +4,8 @@ import { getAllData } from "./helpers.js";
 let localBlogs = JSON.parse(localStorage.getItem("blog")) || [];
 import { API_BASE_URL } from "./constants.js"
 const countedFirst = document.querySelector(".first_count_number");
+const burgerMenu = document.querySelector(".burgerMenu");
+const responsiveMenu = document.querySelector(".responsiveMenu");
 const countedLast = document.querySelector(".third_count_number");
 function animateResultCount(number, target, elem) {
     if (number < target) {
@@ -96,7 +98,9 @@ window.addEventListener('scroll', function () {
 });
 
 
-
+burgerMenu.addEventListener("click",()=>{
+responsiveMenu.classList.toggle("dNone")
+})
 
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -110,22 +114,28 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.log(fetchedBlogs);
 
 
-
+    const users = JSON.parse(localStorage.getItem('user')) || [];
     function displayData(data, page) {
         const start = (page - 1) * itemsPerPage;
         const end = start + itemsPerPage;
         const paginatedItems = data.slice(start, end);
-        blogsContainer.innerHTML = '';
+        if (blogsContainer){
+            blogsContainer.innerHTML = '';
+        }
         paginatedItems.forEach((blog) => {
-            const createdTime = `${moment(blog.createdAt).format('D')}<br>${moment(blog.createdAt).format('MMM')}`;
+            const createdTime = `${moment(blog.createdAt).format('D')}<br>${moment(blog.createdAt).format('MMM')}`; 
             blogsContainer.innerHTML += `
         <div data-id=${blog.id} class="blogDiv">
                         <div class="img-wrapper">
                             <img src="${blog.imageUrl}" alt="">
+                                                    
                         </div>
                        <div class="content-wrapper">
+                       
                      <div class="createdAt">${createdTime}</div>
-                   <i class="fa-regular fa-heart likeIcon"></i>            
+                     <i class="fa-regular fa-heart likeIcon"></i>            
+                     <i class="fa-regular fa-pen-to-square editIcon"></i>
+                     <i class="fa-regular fa-trash-can removeIcon"></i>
                         <h2>${blog.title}</h2>
                         <p>${blog.description}</p>
                         <div class="row blogIcons">
@@ -149,16 +159,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         });
 
-      
-        
-
-
-
-
-
         const likeIcons = document.querySelectorAll(".likeIcon");
         likeIcons.forEach((btn) => {
+          
             btn.addEventListener("click", (e) => {
+                if(users.length != 0){
+
                 const blogDiv = btn.closest(".blogDiv");
                 const blogId = blogDiv.getAttribute("data-id");
                 console.log("Liked post:", blogDiv);
@@ -175,9 +181,18 @@ document.addEventListener('DOMContentLoaded', async () => {
                     e.target.classList.add("fa-regular");
                     localBlogs = localBlogs.filter((id) => id !== blogId);
                     localStorage.setItem("blog", JSON.stringify(localBlogs));   
-                   }
+                   }}
+                   else{
+                    Swal.fire("Please Log in your Account!");
+                }
 
             });
+          
+               
+            
+          
+
+          
         });
 
         const allCards=document.querySelectorAll(".blogDiv")
@@ -186,7 +201,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           const theCardId=card.getAttribute("data-id");
           console.log("local BLOGS",localBlogs);
           
-          if(localBlogs.includes(theCardId)){
+          if(localBlogs.includes(theCardId) && users.length != 0 ){
             const cardIcon=card.children[1].children[1];        
             cardIcon.classList.add("fa-solid");
             cardIcon.classList.remove("fa-regular");
@@ -204,20 +219,23 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     const searchInput=document.querySelector(".searchInput");
-    searchInput.addEventListener("input", () => {
-        const searchTerm = searchInput.value.toUpperCase();
-        const filteredBlogs = fetchedBlogs.filter(blog => 
-            blog.title?.toUpperCase().includes(searchTerm)
-        );
-        currentPage=1;
-        const newTotalPages = Math.ceil(filteredBlogs.length / itemsPerPage);
-        displayData(filteredBlogs, currentPage);
-        updateButtons();
-        totalPages = newTotalPages; 
-    });
+    if (searchInput){
+        searchInput?.addEventListener("input", () => {
+            const searchTerm = searchInput.value.toUpperCase();
+            const filteredBlogs = fetchedBlogs.filter(blog => 
+                blog.title?.toUpperCase().includes(searchTerm)
+            );
+            currentPage=1;
+            const newTotalPages = Math.ceil(filteredBlogs.length / itemsPerPage);
+            displayData(filteredBlogs, currentPage);
+            updateButtons();
+            totalPages = newTotalPages; 
+        });
+    }
+   
 
 
-    document.getElementById('prevBtn').addEventListener('click', (e) => {
+    document.getElementById('prevBtn')?.addEventListener('click', (e) => {
 
         e.preventDefault();
         if (currentPage > 1) {
@@ -227,7 +245,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
-    document.getElementById('nextBtn').addEventListener('click', (e) => {
+    document.getElementById('nextBtn')?.addEventListener('click', (e) => {
         e.preventDefault();
         if (currentPage < totalPages) {
             currentPage++;
