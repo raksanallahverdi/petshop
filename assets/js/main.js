@@ -9,6 +9,7 @@ const countedFirst = document.querySelector(".first_count_number");
 const burgerMenu = document.querySelector(".burgerMenu");
 const responsiveMenu = document.querySelector(".responsiveMenu");
 const countedLast = document.querySelector(".third_count_number");
+
 function animateResultCount(number, target, elem) {
     if (number < target) {
         var interval = setInterval(function () {
@@ -217,6 +218,10 @@ function displayData(data, page) {
         const editIcons = document.querySelectorAll(".editIcon");
         editIcons.forEach((btn) => {
             btn.addEventListener("click", (e) => {
+                if (users.length != 0) {
+
+              
+
                 const blogId = e.target.parentElement.parentElement.getAttribute("data-id");
                 const creatorName = e.target.parentElement.children[6].children[0].children[1].innerHTML;
 
@@ -280,7 +285,16 @@ function displayData(data, page) {
 
                     newDiv.remove();
                 });
+
+
+
+            }
+            else {
+                Swal.fire("Please Log in your Account!");
+            }
             });
+        // btn add event listener finished
+            
         });
 
 

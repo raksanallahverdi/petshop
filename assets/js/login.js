@@ -7,10 +7,11 @@ import { API_BASE_URL } from "./constants.js"
 const registerForm = document.querySelector(".registerForm")
 const loginForm = document.querySelector(".loginForm")
 const loginLink = document.querySelector('.loginLink');
-const registerLink = document.querySelector('.registerLink');
 const favoritesLink = document.querySelector('.favoritesLink');
+const respFavoritesLink = document.querySelector('.respFavoritesLink');
 const respLogin = document.querySelector('.respLogin');
-const respRegister = document.querySelector('.respRegister');
+const toAddBlog = document.querySelector(".toAddBlog");
+const blogBtn = document.querySelector(".blogBtn");
 const logBtn=document.querySelector(".logOut");
 const logOutLink=document.querySelector(".logOutLink");
 
@@ -31,14 +32,20 @@ window.addEventListener('load', async () => {
     loginLink.style.display = 'inline-block'; 
        if (respLogin)  respLogin.style.display = 'inline-block'; 
        favoritesLink.style.display = 'none'; 
+       respFavoritesLink.style.display = 'none'; 
+       if (toAddBlog) toAddBlog.style.display='none'
        logBtn.style.display='none'
+       blogBtn.style.display='none'
        logOutLink.style.display='none'
    }
    else{
     loginLink.style.display = 'none'; 
     respLogin.style.display = 'none'; 
     favoritesLink.style.display='inline-block';
+    respFavoritesLink.style.display='inline-block';
+    toAddBlog.style.display='inline-block'
     logBtn.style.display='inline-block'
+    blogBtn.style.display='inline-block'
     logOutLink.style.display='inline-block'
 
    }  

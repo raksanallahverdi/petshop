@@ -11,7 +11,7 @@ header {
     .responsiveMenu{
         display: none;
         transition: all 0.2s ease;
-        z-index: 2;
+        z-index: 999;
         position: absolute;
         width: 40%;
         text-align: right;
