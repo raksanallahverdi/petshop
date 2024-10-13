@@ -71,20 +71,22 @@
         </div>
     </header>
     <section class="sectionAddBlog">
-      <form action="">
+      <form class="addFormBlog" action="">
         <h2>Blog</h2>
         <input class="input" type="text" placeholder="Title">
         <input  class="input" type="text" placeholder="Description">
-        <input  class="input" type="text" placeholder="Image Url">
+        <input value="https://static.vecteezy.com/system/resources/thumbnails/033/662/051/small_2x/cartoon-lofi-young-manga-style-girl-while-listening-to-music-in-the-rain-ai-generative-photo.jpg" class="input" type="text" placeholder="Image Url">
         <label for="choices">Choose your options:</label>
-        <div class="options">
-            <label><input type="checkbox" name="choices" value="option1"> Option 1</label>
-            <label><input type="checkbox" name="choices" value="option2"> Option 2</label>
-            <label><input type="checkbox" name="choices" value="option3"> Option 3</label>
-            <label><input type="checkbox" name="choices" value="option4"> Option 4</label>
-            <label><input type="checkbox" name="choices" value="option5"> Option 5</label>
+        <div class="checkboxes">
+            <label><input type="checkbox" name="choices" value="Health">Health</label>
+            <label><input type="checkbox" name="choices" value="Finance">Finance</label>
+            <label><input type="checkbox" name="choices" value="Technology">Technology</label>
+            <label><input type="checkbox" name="choices" value="Travel">Travel</label>
+            <label><input type="checkbox" name="choices" value="Environment">Environment</label>
+            <label><input type="checkbox" name="choices" value="Automative">Automative</label>
+            <label><input type="checkbox" name="choices" value="Lifestyle">Lifestyle</label>
         </div>
-        <button>Submit</button>
+        <button class="blogSubmitBtn">Submit</button>
       </form>
 
 
@@ -132,7 +134,7 @@
          <span>Copyright ©2024 All rights reserved | This template is made by Raksana with Colorlib</span>
         </div>
      </footer>
-
+<script type="module" src="./assets/js/addBlog.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"
         integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g=="

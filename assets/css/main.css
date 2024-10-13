@@ -21,6 +21,10 @@ body {
   overflow-x: scroll;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 .container {
   height: 100%;
   margin: 0 auto;
@@ -67,7 +71,8 @@ body {
 }
 
 .swiper-slide img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .swiper-slide-active {
@@ -142,10 +147,11 @@ header {
 header .logo {
   margin-right: 20px;
 }
-header .dNone {
-  display: none;
+header .dFlex {
+  display: flex !important;
 }
 header .responsiveMenu {
+  display: none;
   transition: all 0.2s ease;
   z-index: 2;
   position: absolute;
@@ -574,7 +580,8 @@ footer a:hover {
 }
 .section3 .img-wrapper img {
   width: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .section4 {
@@ -637,7 +644,8 @@ footer a:hover {
   font-size: 60px;
 }
 .section4 .counting-numbers div img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 1px solid red;
 }
 .section4 .counting_1 {
@@ -666,7 +674,8 @@ footer a:hover {
 }
 .section5 .img-wrapper img {
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .section6 {
@@ -696,7 +705,8 @@ footer a:hover {
   width: 31%;
 }
 .section6 .row .team_member img {
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   width: 100%;
 }
 .section6 .row .team_member h3 {
@@ -718,6 +728,7 @@ footer a:hover {
 }
 
 .section7 {
+  height: -moz-fit-content;
   height: fit-content;
   padding: 90px 0;
   margin-bottom: 90px;
@@ -787,9 +798,16 @@ footer a:hover {
   min-height: 100vh;
 }
 .sectionAddBlog .options {
-  gap: 20px;
+  -moz-column-gap: 90px;
+       column-gap: 90px;
+  row-gap: 30px;
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
+}
+.sectionAddBlog .options label {
+  display: flex;
+  gap: 5px;
 }
 .sectionAddBlog form {
   gap: 35px;
@@ -812,6 +830,46 @@ footer a:hover {
 .sectionAddBlog form .input {
   padding: 20px;
   height: 40px;
+}
+
+.modal {
+  position: fixed;
+  top: 15%;
+  width: 45%;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  gap: 20px;
+  padding: 30px;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(93, 40, 3, 0.759);
+}
+
+.modal .input {
+  width: 300px;
+  height: 30px;
+}
+
+.modal i {
+  font-size: 26px;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+.modal i:hover {
+  cursor: pointer;
+}
+
+.modal button {
+  background-image: linear-gradient(-180deg, #d26f35, #77320a);
+  border: none;
+  color: white;
+  height: 30px;
+}
+.modal button:hover {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1220px) {
@@ -1028,6 +1086,17 @@ footer a:hover {
   padding-top: 70px;
   margin-bottom: 60px;
 }
+.section__blog__container .getDetails {
+  margin-bottom: 10px;
+  color: purple;
+  font-size: 20px;
+  transition: all 0.5s ease;
+}
+.section__blog__container .getDetails:hover {
+  cursor: pointer;
+  color: red;
+  letter-spacing: 2.5px;
+}
 .section__blog__container .container {
   flex-direction: column;
 }
@@ -1082,6 +1151,7 @@ footer a:hover {
   border-radius: 5px;
 }
 .section__blog__container .blogs .blogDiv {
+  height: -moz-fit-content;
   height: fit-content;
   box-shadow: 0px 16px 35px 0px rgba(0, 0, 2, 0.144);
   width: 100%;
@@ -1123,6 +1193,7 @@ footer a:hover {
   padding: 50px 30px 10px 30px;
 }
 .section__blog__container .blogs .blogDiv .blogIcons {
+  height: -moz-fit-content;
   height: fit-content;
   margin-bottom: 10px;
   text-align: left;
@@ -1138,6 +1209,7 @@ footer a:hover {
   gap: 5px;
   align-items: center;
   font-size: 16px;
+  width: -moz-fit-content;
   width: fit-content;
 }
 .section__blog__container .blogs .blogDiv h4 {
@@ -1150,7 +1222,8 @@ footer a:hover {
 .section__blog__container .blogs .blogDiv .img-wrapper img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .section__blog__container .right-side {
   width: 30%;
@@ -1192,10 +1265,12 @@ footer a:hover {
 }
 .section__blog__container .right-side .img-wrapper {
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .section__blog__container .right-side .img-wrapper img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
   width: 80px;
   height: 80px;
@@ -1327,6 +1402,46 @@ footer a:hover {
   font-size: 18px;
 }
 
+.BlogCard-wrapper {
+  padding-top: 70px;
+}
+.BlogCard-wrapper .blog_card {
+  box-shadow: 2px 4px 20px 2px rgb(50, 44, 44);
+  display: flex;
+  padding: 70px 50px;
+  width: 85%;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+.BlogCard-wrapper .contents {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 50%;
+  padding: 10px 50px;
+}
+.BlogCard-wrapper .contents * {
+  transition: all 0.3s ease;
+}
+.BlogCard-wrapper .contents *:hover {
+  transform: scale(1.03);
+}
+.BlogCard-wrapper .contents h2 {
+  font-size: 30px;
+  color: red;
+}
+.BlogCard-wrapper .my_image-wrapper {
+  border-radius: 15px;
+  width: 50%;
+  margin: 0 auto;
+}
+.BlogCard-wrapper .my_image-wrapper img {
+  border-radius: 15px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+
 @media screen and (max-width: 1200px) {
   .blogAndRight .right-side .recents .recentPost h3 {
     width: 95px !important;
@@ -1343,6 +1458,7 @@ footer a:hover {
     width: 100%;
   }
   .section__blog__container .blogAndRight .right-side .recents .recentPost h3 {
+    width: -moz-fit-content !important;
     width: fit-content !important;
   }
 }
@@ -1395,13 +1511,15 @@ footer a:hover {
   color: rgb(242, 41, 31);
 }
 .wishlist-wrapper .wishedElement .img-wrapper {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .wishlist-wrapper .wishedElement .img-wrapper img {
   border-radius: 8px;
   width: 320px;
   height: 420px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .contact {
@@ -1656,7 +1774,6 @@ footer a:hover {
 }
 .loginSection .overlay {
   background: #FF416C;
-  background: -webkit-linear-gradient(to right, #FF4B2B, #FF4B2B);
   background: linear-gradient(to right, #FF4B2B, #FF4B2B);
   background-repeat: no-repeat;
   background-size: cover;

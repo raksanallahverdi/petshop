@@ -2,13 +2,14 @@ header {
     .logo{
         margin-right: 20px;
     }
-    .dNone{
-        display: none;
+    .dFlex{
+        display: flex !important;
     }
     width: 100%;
     display: flex;
     flex-direction: column;
     .responsiveMenu{
+        display: none;
         transition: all 0.2s ease;
         z-index: 2;
         position: absolute;

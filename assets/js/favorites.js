@@ -17,7 +17,7 @@ movies.forEach((card,idx) => {
                        <div class="row blogIcons">
                        <div class="row">
                        <i class="fa-solid fa-user-pen"></i>
-                       <h4>Raksanall</h4> 
+                       <h4>${card.createdBy}</h4> 
                        </div>
                        <div class="row">
                        <i class="fa-solid fa-layer-group"></i>

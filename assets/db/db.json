@@ -1,16 +1,15 @@
 {
   "blogs": [
     {
-      "id": "1",
       "title": "The Rise of AI in Everyday Life",
-      "description": "Exploring how AI is becoming an integral part of modern technology and day-to-day tasks. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
-      "imageUrl": "https://dailygrind.ph/wp-content/uploads/2020/12/IMG_1452-scaled.jpeg",
-      "createdAt": "2024-10-01",
+      "description": "Exploring how AI is becoming an integral part of modern technology and day-to-day taskssss.",
       "categories": [
-        "Technology",
-        "Health"
+        "Environment",
+        "Lifestyle"
       ],
-      "createdBy": "John Doe"
+      "createdBy": "Jane Smith",
+      "imageUrl": "https://dailygrind.ph/wp-content/uploads/2020/12/IMG_1452-scaled.jpeg",
+      "id": "1"
     },
     {
       "id": "2",
@@ -95,6 +94,14 @@
         "Environment"
       ],
       "createdBy": "Laura Garcia"
+    },
+    {
+      "title": "check testing",
+      "createdBy": "senanx",
+      "description": "testing",
+      "categories": "Travel, Environment",
+      "imageUrl": "https://static.vecteezy.com/system/resources/thumbnails/033/662/051/small_2x/cartoon-lofi-young-manga-style-girl-while-listening-to-music-in-the-rain-ai-generative-photo.jpg",
+      "id": "5740"
     }
   ],
   "users": [

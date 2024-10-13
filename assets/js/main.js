@@ -1,6 +1,8 @@
 const counted = document.querySelector(".second_count_number");
 import { endpoints } from "./constants.js";
 import { getAllData } from "./helpers.js";
+import { deleteDataById } from "./helpers.js";
+import { updateDataById } from "./helpers.js";
 let localBlogs = JSON.parse(localStorage.getItem("blog")) || [];
 import { API_BASE_URL } from "./constants.js"
 const countedFirst = document.querySelector(".first_count_number");
@@ -98,8 +100,8 @@ window.addEventListener('scroll', function () {
 });
 
 
-burgerMenu.addEventListener("click",()=>{
-responsiveMenu.classList.toggle("dNone")
+burgerMenu.addEventListener("click", () => {
+    responsiveMenu.classList.toggle("dFlex")
 })
 
 
@@ -109,21 +111,21 @@ document.addEventListener('DOMContentLoaded', async () => {
     const itemsPerPage = 4;
     let currentPage = 1;
     const fetchedBlogs = await getAllData(API_BASE_URL, endpoints.blogs);
-    let filteredBlogs = fetchedBlogs; 
+    let filteredBlogs = fetchedBlogs;
     const totalPages = Math.ceil(fetchedBlogs.length / itemsPerPage);
     console.log(fetchedBlogs);
 
 
     const users = JSON.parse(localStorage.getItem('user')) || [];
-    function displayData(data, page) {
+function displayData(data, page) {
         const start = (page - 1) * itemsPerPage;
         const end = start + itemsPerPage;
         const paginatedItems = data.slice(start, end);
-        if (blogsContainer){
+        if (blogsContainer) {
             blogsContainer.innerHTML = '';
         }
         paginatedItems.forEach((blog) => {
-            const createdTime = `${moment(blog.createdAt).format('D')}<br>${moment(blog.createdAt).format('MMM')}`; 
+            const createdTime = `${moment(blog.createdAt).format('D')}<br>${moment(blog.createdAt).format('MMM')}`;
             blogsContainer.innerHTML += `
         <div data-id=${blog.id} class="blogDiv">
                         <div class="img-wrapper">
@@ -141,7 +143,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                         <div class="row blogIcons">
                             <div class="row">
                                 <i class="fa-solid fa-user-pen"></i>
-                                <h4>Raksanall</h4> 
+                                <h4>${blog.createdBy}</h4> 
                             </div>
                             <div class="row">
                                 <i class="fa-solid fa-layer-group"></i>
@@ -151,7 +153,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                                 <i class="fa-regular fa-comments"></i>
                                  <h4>9823 Comments</h4>
                             </div>
-                        </div>
+                            </div>
+                            <a href="detail.html?id=${blog.id}" class="getDetails">Read More...</a>
                        </div>
                     </div>
 
@@ -160,54 +163,140 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
 
         const likeIcons = document.querySelectorAll(".likeIcon");
+        const removeIcons = document.querySelectorAll(".removeIcon");
         likeIcons.forEach((btn) => {
-          
             btn.addEventListener("click", (e) => {
-                if(users.length != 0){
+                if (users.length != 0) {
 
-                const blogDiv = btn.closest(".blogDiv");
-                const blogId = blogDiv.getAttribute("data-id");
-                console.log("Liked post:", blogDiv);
-                if (e.target.classList.contains("fa-regular") && e.target.classList.contains("fa-heart")) {
-                    e.target.classList.add("fa-solid");
-                    e.target.classList.remove("fa-regular");
-                    if (!localBlogs.includes(blogId)) {
-                        localBlogs.push(blogId);
+                    const blogDiv = btn.closest(".blogDiv");
+                    const blogId = blogDiv.getAttribute("data-id");
+                    console.log("Liked post:", blogDiv);
+                    if (e.target.classList.contains("fa-regular") && e.target.classList.contains("fa-heart")) {
+                        e.target.classList.add("fa-solid");
+                        e.target.classList.remove("fa-regular");
+                        if (!localBlogs.includes(blogId)) {
+                            localBlogs.push(blogId);
+                            localStorage.setItem("blog", JSON.stringify(localBlogs));
+                        }
+                    }
+                    else if (e.target.classList.contains("fa-solid") && e.target.classList.contains("fa-heart")) {
+                        e.target.classList.remove("fa-solid");
+                        e.target.classList.add("fa-regular");
+                        localBlogs = localBlogs.filter((id) => id !== blogId);
                         localStorage.setItem("blog", JSON.stringify(localBlogs));
                     }
                 }
-                else if(e.target.classList.contains("fa-solid") && e.target.classList.contains("fa-heart")){
-                    e.target.classList.remove("fa-solid");
-                    e.target.classList.add("fa-regular");
-                    localBlogs = localBlogs.filter((id) => id !== blogId);
-                    localStorage.setItem("blog", JSON.stringify(localBlogs));   
-                   }}
-                   else{
+                else {
                     Swal.fire("Please Log in your Account!");
                 }
 
             });
-          
-               
-            
-          
+        });
+        removeIcons.forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+                if (users.length != 0) {
 
-          
+                    const blogDiv = btn.closest(".blogDiv");
+                    const blogId = blogDiv.getAttribute("data-id");
+                    console.log("Deleting post:", blogDiv);
+                    deleteDataById(API_BASE_URL, endpoints.blogs, blogId);
+                    blogDiv.remove();
+
+
+
+
+                }
+                else {
+                    Swal.fire("Please Log in your Account!");
+                }
+
+            });
+
+
+        })
+        const editIcons = document.querySelectorAll(".editIcon");
+        editIcons.forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+                const blogId = e.target.parentElement.parentElement.getAttribute("data-id");
+                const creatorName = e.target.parentElement.children[6].children[0].children[1].innerHTML;
+
+
+
+                const newDiv = document.createElement("div");
+                newDiv.classList.add("modal");
+                newDiv.innerHTML += `
+        <i class="fa-solid fa-xmark finishIcon"></i>
+        <h2>Edit Blog Data</h2>
+        <input id="editTitle" type="text" value="${e.target.parentElement.children[4].innerHTML}">
+        <textarea id="editDescription">${e.target.parentElement.children[5].innerHTML}</textarea>
+         <label for="choices">Choose your options:</label>
+        <div class="options">
+            <label><input type="checkbox" name="choices" value="Health">Health</label>
+            <label><input type="checkbox" name="choices" value="Finance">Finance</label>
+            <label><input type="checkbox" name="choices" value="Technology">Technology</label>
+            <label><input type="checkbox" name="choices" value="Travel">Travel</label>
+            <label><input type="checkbox" name="choices" value="Environment">Environment</label>
+            <label><input type="checkbox" name="choices" value="Automotive">Automotive</label>
+            <label><input type="checkbox" name="choices" value="Lifestyle">Lifestyle</label>
+        </div>
+        <input id="editImageSrc" type="text" value="${e.target.parentElement.parentElement.children[0].children[0].getAttribute("src")}">
+        <button id="submitEdit">Submit</button>
+        `
+                blogsContainer.appendChild(newDiv);
+
+                const finishIcon = document.querySelector(".finishIcon");
+                finishIcon.addEventListener("click", () => {
+                    newDiv.remove();
+                });
+
+                const submitBtn = document.querySelector("#submitEdit");
+                submitBtn.addEventListener("click", async () => {
+                    const selectedOptions = Array.from(document.querySelectorAll('input[name="choices"]:checked'))
+                        .map((checkbox) => checkbox.value);
+
+                    const updatedBlog = {
+                        title: document.getElementById("editTitle").value,
+                        createdBy: creatorName,
+
+                        description: document.getElementById("editDescription").value,
+                        categories: selectedOptions.join(', '), // Collect checked categories
+                        imageUrl: document.getElementById("editImageSrc").value
+                    };
+                    console.log(blogId);
+
+
+                    if (blogId && blogId !== 'null') {
+                        await updateDataById(API_BASE_URL, endpoints.blogs, blogId, updatedBlog)
+                            .then(() => {
+                                console.log("Blog updated successfully");
+                                window.location.reload();
+                            })
+                            .catch((error) => {
+                                console.error("Failed to update blog:", error);
+                            });
+                    } else {
+                        console.error("Invalid blog ID");
+                    }
+
+                    newDiv.remove();
+                });
+            });
         });
 
-        const allCards=document.querySelectorAll(".blogDiv")
+
+        const allCards = document.querySelectorAll(".blogDiv")
         console.log(allCards);
-        allCards.forEach((card)=>{
-          const theCardId=card.getAttribute("data-id");
-          console.log("local BLOGS",localBlogs);
-          
-          if(localBlogs.includes(theCardId) && users.length != 0 ){
-            const cardIcon=card.children[1].children[1];        
-            cardIcon.classList.add("fa-solid");
-            cardIcon.classList.remove("fa-regular");
-            
-          }
-    })
+        allCards.forEach((card) => {
+            const theCardId = card.getAttribute("data-id");
+            console.log("local BLOGS", localBlogs);
+
+            if (localBlogs.includes(theCardId) && users.length != 0) {
+                const cardIcon = card.children[1].children[1];
+                cardIcon.classList.add("fa-solid");
+                cardIcon.classList.remove("fa-regular");
+
+            }
+        })
 
 
 
@@ -218,21 +307,21 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('nextBtn').disabled = currentPage === totalPages;
     }
 
-    const searchInput=document.querySelector(".searchInput");
-    if (searchInput){
+    const searchInput = document.querySelector(".searchInput");
+    if (searchInput) {
         searchInput?.addEventListener("input", () => {
             const searchTerm = searchInput.value.toUpperCase();
-            const filteredBlogs = fetchedBlogs.filter(blog => 
+            const filteredBlogs = fetchedBlogs.filter(blog =>
                 blog.title?.toUpperCase().includes(searchTerm)
             );
-            currentPage=1;
+            currentPage = 1;
             const newTotalPages = Math.ceil(filteredBlogs.length / itemsPerPage);
             displayData(filteredBlogs, currentPage);
             updateButtons();
-            totalPages = newTotalPages; 
+            totalPages = newTotalPages;
         });
     }
-   
+
 
 
     document.getElementById('prevBtn')?.addEventListener('click', (e) => {
