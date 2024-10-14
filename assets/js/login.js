@@ -233,8 +233,7 @@ registerFormResponsive?.addEventListener("submit", async (e) => {
         alert("There was an error registering the user. Please try again.");
     }
 })
-console.log(loginForm.querySelector('input[type="text"]'));
-console.log(loginForm.querySelector('input[type="password"]'));
+
 
 console.log("Login form:", loginForm);
 if (loginForm) {
