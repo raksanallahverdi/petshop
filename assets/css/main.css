@@ -793,20 +793,21 @@ footer a:hover {
 }
 
 .sectionAddBlog {
+  margin-bottom: 80px;
   padding-top: 60px;
   min-height: 100vh;
 }
-.sectionAddBlog .options {
-  -moz-column-gap: 90px;
-       column-gap: 90px;
+.sectionAddBlog .checkboxes {
+  -moz-column-gap: 40px;
+       column-gap: 40px;
   row-gap: 30px;
   align-items: center;
   display: flex;
   flex-wrap: wrap;
 }
-.sectionAddBlog .options label {
+.sectionAddBlog .checkboxes label {
   display: flex;
-  gap: 5px;
+  gap: 4px;
 }
 .sectionAddBlog form {
   gap: 35px;
@@ -893,9 +894,10 @@ footer a:hover {
   .sectionAddBlog form {
     width: 55%;
   }
-  .sectionAddBlog .options {
+  .sectionAddBlog .checkboxes {
+    display: flex;
+    flex-wrap: wrap;
     align-items: flex-start;
-    flex-direction: column;
   }
 }
 @media screen and (max-width: 1070px) {
@@ -997,6 +999,16 @@ footer a:hover {
   .section7 {
     text-align: center;
   }
+  .sectionAddBlog {
+    margin-bottom: 90px;
+  }
+  .sectionAddBlog form {
+    width: 65%;
+  }
+  .sectionAddBlog .options {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
 @media screen and (max-width: 768px) {
   .section1 .content-wrapper {
@@ -1066,6 +1078,16 @@ footer a:hover {
   .section6 .team_member h3 span {
     font-weight: 300;
     font-size: 13px;
+  }
+  .sectionAddBlog {
+    margin-bottom: 90px;
+  }
+  .sectionAddBlog form {
+    width: 80%;
+  }
+  .sectionAddBlog .options {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
 .section_banner {

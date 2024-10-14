@@ -20,11 +20,11 @@ const logOutLink=document.querySelector(".logOutLink");
 
 
 window.addEventListener('load', async () => {
-    const isLogged = await checkUser();
-    console.log('Logged: ', isLogged);
+    // const isLogged = await checkUser();
+   
    
    const users = JSON.parse(localStorage.getItem('user')) || [];
-   console.log(users);
+  
    
 
    if (users.length == 0) {
@@ -235,7 +235,6 @@ registerFormResponsive?.addEventListener("submit", async (e) => {
 })
 
 
-console.log("Login form:", loginForm);
 if (loginForm) {
     loginForm.addEventListener('submit',async(e)=>{
         e.preventDefault();
@@ -263,10 +262,7 @@ if (loginForm) {
     
     })
 }
- else{
-    console.log("Login form not found");
 
- }
  if (loginFormResponsive) {
     loginFormResponsive.addEventListener('submit',async(e)=>{
         e.preventDefault();
@@ -294,10 +290,7 @@ if (loginForm) {
     
     })
 }
- else{
-    console.log("Login form not found");
 
- }
 
 
 const signUpButton = document.getElementById('signUp');

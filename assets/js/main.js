@@ -114,7 +114,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const fetchedBlogs = await getAllData(API_BASE_URL, endpoints.blogs);
     let filteredBlogs = fetchedBlogs;
     const totalPages = Math.ceil(fetchedBlogs.length / itemsPerPage);
-    console.log(fetchedBlogs);
 
 
     const users = JSON.parse(localStorage.getItem('user')) || [];
@@ -299,10 +298,8 @@ function displayData(data, page) {
 
 
         const allCards = document.querySelectorAll(".blogDiv")
-        console.log(allCards);
         allCards.forEach((card) => {
             const theCardId = card.getAttribute("data-id");
-            console.log("local BLOGS", localBlogs);
 
             if (localBlogs.includes(theCardId) && users.length != 0) {
                 const cardIcon = card.children[1].children[1];

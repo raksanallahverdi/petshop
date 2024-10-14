@@ -11,7 +11,6 @@ addForm.addEventListener("submit", async (e) => {
     let userId = localStorage.getItem("user");
     userId = userId.replace(/["']/g, "");
 console.log("User ID from localStorage:", userId); 
-console.log("hi");
 
 
     if (!userId) {
@@ -19,18 +18,9 @@ console.log("hi");
         return;
     }
 
-    console.log("User ID from localStorage:", userId); 
     const allUsers = await getAllData(API_BASE_URL, endpoints.users); 
-    console.log("Fetched users:", allUsers); 
 
 
-  
-    allUsers.forEach(user => {
-        console.log("User object:", user); 
-        console.log(`Comparing user.id: "${user.id}" with userId: "${userId}"`);
-        console.log(`Type of user.id: ${typeof user.id}, Type of userId: ${typeof userId}`);
-    });
-    
     
     const currentUser = allUsers.find(user => String(user.id).trim() === String(userId).trim());
   
@@ -59,12 +49,22 @@ console.log("hi");
             imageUrl: newImageUrl,
             createdAt: new Date().toISOString(), 
             createdBy: createdBy,  
-            categories: selectedCategories.join(', '),  
+            categories: selectedCategories, 
         };
-
-        await addData(API_BASE_URL, endpoints.blogs, newBlog);
+        console.log(`${API_BASE_URL}${endpoints.blogs}`);
+        try {
+            await addData(API_BASE_URL, endpoints.blogs, newBlog);
+            
+        } catch (error) {
+            console.log(error.message);
+         
+            
+        }
 
         Swal.fire("Blog added successfully");
+
+      
+
     } else {
         Swal.fire("Please fill in all the fields and choose at least one category");
     }
