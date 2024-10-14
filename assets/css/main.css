@@ -17,7 +17,7 @@ button a {
 }
 
 body {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 button:hover {
