@@ -428,7 +428,7 @@
         .right-side{
             .recents {
                 .recentPost{
-                    h3{
+                    h3{                       
                         width: 95px !important;
                     }
     
@@ -447,7 +447,8 @@
             flex-direction: column;
         }
         .right-side{
-            width: 100%;
+           margin: 0 auto;
+            width: 80%;
         }
 
         .wrappersBlog {
@@ -458,7 +459,7 @@
                 .recents {
                     .recentPost{
                         h3{
-                            width: fit-content !important;
+                            width: 60% !important;
                         }
         
                     }

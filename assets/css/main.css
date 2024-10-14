@@ -1478,14 +1478,14 @@ footer a:hover {
     flex-direction: column;
   }
   .section__blog__container .right-side {
-    width: 100%;
+    margin: 0 auto;
+    width: 80%;
   }
   .section__blog__container .wrappersBlog {
     width: 100%;
   }
   .section__blog__container .blogAndRight .right-side .recents .recentPost h3 {
-    width: -moz-fit-content !important;
-    width: fit-content !important;
+    width: 60% !important;
   }
 }
 @media screen and (max-width: 580px) {
