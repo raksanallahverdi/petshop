@@ -442,6 +442,7 @@
 }
 @media screen and (max-width:992px) {
     .section__blog__container {
+        
         .blogAndRight {
             flex-direction: column;
         }
@@ -471,3 +472,69 @@
 
 
 }
+@media screen and (max-width:580px){
+    .section__blog__container{
+        .blogs{
+            .createdAt {
+                font-size: 16px;
+                width: 60px;
+                height: 60px;
+                position: absolute;
+                top: -10%;
+                left: 35px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                color: white;
+                background-color: #eb592d;
+                border-radius: 5px;
+            }
+        .blogDiv {
+            height: fit-content;
+            box-shadow: 0px 16px 35px 0px rgba(0, 0, 2, 0.144);
+           i{
+            font-size: 20px !important;
+           }
+    
+            .content-wrapper {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                height: 40%;
+                padding: 50px 30px 10px 30px;
+                h2{
+                    font-size: 18px;
+                }
+            }
+            margin: 0 auto;
+            width:80% !important;
+            .blogIcons {
+                height: fit-content;
+                margin-bottom: 10px;
+                text-align: left;
+                .row {
+                    align-items: center
+                }
+                width: 100%;
+                flex-direction: row;
+                gap: 40px;
+                color: #909092;
+    
+                div {
+                    gap: 5px;
+                    align-items: center;
+                    font-size: 16px;
+                    width: fit-content;
+                }
+            }
+    
+            h4 {
+                font-weight: 400;
+            }
+    
+        }
+    }
+  
+}}
