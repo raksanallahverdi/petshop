@@ -1633,7 +1633,7 @@ footer a:hover {
   }
 }
 .loginSection {
-  margin-top: 70px;
+  margin: 40px 0;
   @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
 }
 .loginSection * {
@@ -1858,6 +1858,7 @@ footer a:hover {
 .loginSection form input {
   width: 400px;
   padding: 10px;
+  text-align: center;
   height: 40px;
 }
 .loginSection form button {
@@ -1876,4 +1877,25 @@ footer a:hover {
 }
 .registerSection form button {
   height: 30px;
+}
+
+.responsiveForm-wrapper {
+  display: none;
+}
+.responsiveForm-wrapper .loginForm {
+  margin: 90px 0;
+}
+
+@media screen and (max-width: 992px) {
+  #container {
+    display: none;
+  }
+  .container {
+    justify-content: center;
+  }
+  .responsiveForm-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }/*# sourceMappingURL=main.css.map */
