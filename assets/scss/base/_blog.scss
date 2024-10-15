@@ -510,7 +510,7 @@
                 }
             }
             margin: 0 auto;
-            width:80% !important;
+            width:70% !important;
             .blogIcons {
                 height: fit-content;
                 margin-bottom: 10px;
@@ -538,4 +538,19 @@
         }
     }
   
-}}
+}
+}
+
+@media screen and (max-width:400px){
+    .section__blog__container{
+        .blogs{
+            .createdAt {
+         
+            }
+        .blogDiv {
+            background-color: #dd1515;
+            width: 70% !important;
+
+        }}
+    }
+}
