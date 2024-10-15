@@ -1115,6 +1115,10 @@ footer a:hover {
     align-items: flex-start;
     flex-direction: column;
   }
+  .modal {
+    left: 9% !important;
+    width: 80% !important;
+  }
 }
 .section_banner {
   background-image: url(../images/bradcam.png);
