@@ -152,7 +152,7 @@ registerForm?.addEventListener("submit", async (e) => {
     try {
         await addData(API_BASE_URL, endpoints.users, newUser);
     
-            window.location = "http://127.0.0.1:5500/login.html";
+            window.location.reload();
 
     } catch (error) {
         console.error("Error during registration:", error);
@@ -226,7 +226,7 @@ registerFormResponsive?.addEventListener("submit", async (e) => {
     try {
         await addData(API_BASE_URL, endpoints.users, newUser);
     
-            window.location = "http://127.0.0.1:5500/login.html";
+            window.location.reload();
 
     } catch (error) {
         console.error("Error during registration:", error);
