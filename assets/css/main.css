@@ -1754,8 +1754,8 @@ footer a:hover {
   }
   .favorites .wishlist-wrapper .wishedElement .deleteIcon {
     font-size: 26px;
-    top: 9.4%;
-    right: 17%;
+    top: 2.4rem;
+    right: 1.4rem;
     position: absolute;
   }
   .favorites .wishlist-wrapper .wishedElement .deleteIcon:hover {
