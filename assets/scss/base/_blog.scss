@@ -272,9 +272,14 @@
             font-size: 18px;
 
             .recentPost {
+                .img-wrapper{
+                    width: 40%;
+                }
                 display: flex;
+                width: 100%;
 
                 div {
+                    width: 60%;
                     span {
                         color: #999999;
                     }

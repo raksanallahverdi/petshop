@@ -231,7 +231,9 @@ function displayData(data, page) {
                 newDiv.innerHTML += `
         <i class="fa-solid fa-xmark finishIcon"></i>
         <h2>Edit Blog Data</h2>
+        <label>Edit Title:</label>
         <input id="editTitle" type="text" value="${e.target.parentElement.children[4].innerHTML}">
+        <label>Edit Description:</label>
         <textarea id="editDescription">${e.target.parentElement.children[5].innerHTML}</textarea>
          <label for="choices">Choose your options:</label>
         <div class="options">
