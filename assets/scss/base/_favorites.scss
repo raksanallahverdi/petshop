@@ -8,6 +8,7 @@
     gap: 10px;
 
     .wishedElement {
+        position: relative;
         .deleteIcon {
             font-size: 24px;
             margin-right: 14px;
@@ -85,8 +86,8 @@
                 width: 85%;
                 .deleteIcon {
                    font-size: 26px;
-                    top: 10.4%;
-                    right: 21%;
+                    top: 2.2rem;
+                    right: 1.8rem;
                     position: absolute;
          
                      &:hover {
@@ -127,7 +128,7 @@
                 }
 
                 .img-wrapper {
-                    
+
                     width: 100%;
 
                     img {
@@ -151,8 +152,8 @@
                 width: 85% ;
                 .deleteIcon {
                    font-size: 26px;
-                    top: 9%;
-                    right: 17%;
+                    top: 2.3rem;
+                    right: 1.4rem;
                     position: absolute;
                      &:hover {
                          cursor: pointer;
@@ -212,9 +213,9 @@
                 flex-direction: column;
                 width: 85% ;
                 .deleteIcon {
-                   font-size: 26px;
-                    top: 9%;
-                    right: 17%;
+                   font-size: 23px;
+                    top: 2.4rem;
+                    right: 1.4rem;
                     position: absolute;
                      &:hover {
                          cursor: pointer;
