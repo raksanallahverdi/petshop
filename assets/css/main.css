@@ -214,6 +214,7 @@ header .responsiveMenu nav a {
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
+  z-index: 999;
   height: 95px;
   width: 100%;
 }
@@ -411,7 +412,11 @@ footer a:hover {
     width: 60%;
   }
 }
-.loginLink, .registerLink, .toAddBlog, .blogBtn, .respFavoritesLink {
+.loginLink,
+.registerLink,
+.toAddBlog,
+.blogBtn,
+.respFavoritesLink {
   display: none;
 }
 
@@ -423,13 +428,15 @@ footer a:hover {
   background-repeat: no-repeat;
 }
 .section1 .container {
+  width: 100%;
   display: flex;
   align-items: center;
 }
 .section1 .content-wrapper {
+  width: 45%;
   gap: 35px;
-  width: 50%;
   display: flex;
+  padding-left: 100px;
   flex-direction: column;
   color: white;
 }
@@ -442,7 +449,7 @@ footer a:hover {
   font-weight: 200;
 }
 .section1 .content-wrapper p {
-  width: 70%;
+  width: 80%;
   line-height: 35px;
 }
 .section1 .content-wrapper button {
@@ -463,13 +470,15 @@ footer a:hover {
   color: white;
 }
 .section1 .img-wrapper {
+  width: 55%;
   display: block;
-  position: absolute;
+  position: relative;
 }
 .section1 .img-wrapper img {
-  width: 80%;
-  left: 300px;
-  top: 100px;
+  background-color: transparent !important;
+  width: 70%;
+  left: 60px;
+  top: 70px;
   position: relative;
 }
 
@@ -886,10 +895,13 @@ footer a:hover {
 }
 
 @media screen and (max-width: 1220px) {
-  .section1 .img-wrapper img {
-    width: 75% !important;
-    left: 250px !important;
-    top: 110px !important;
+  .section1 .container .img-wrapper img {
+    width: 75%;
+    top: 60px;
+    left: 100px;
+  }
+  .section1 .container .content-wrapper h1 {
+    font-size: 67px;
   }
   .section3 .pet__content__wrapper {
     padding: 50px 0 0 50px;
@@ -911,6 +923,29 @@ footer a:hover {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
+  }
+}
+@media screen and (max-height: 520px) {
+  .section1 {
+    background-color: #ff3500;
+  }
+  .section1 .container .img-wrapper img {
+    width: 60%;
+    top: 70px;
+    left: 100px;
+  }
+  .section1 .container .content-wrapper h1 {
+    font-size: 67px;
+  }
+}
+@media screen and (max-height: 395px) {
+  .section1 .container .img-wrapper img {
+    width: 55%;
+    top: 110px;
+    left: 100px;
+  }
+  .section1 .container .content-wrapper h1 {
+    font-size: 67px;
   }
 }
 @media screen and (max-width: 1070px) {
@@ -965,10 +1000,17 @@ footer a:hover {
 }
 @media screen and (max-width: 992px) {
   .section1 .img-wrapper {
+    width: 0 !important;
     display: none !important;
   }
   .section1 .img-wrapper img {
     display: none;
+  }
+  .section1 .content-wrapper {
+    width: 100% !important;
+  }
+  .section1 .content-wrapper p {
+    width: 46% !important;
   }
   .section1 .content-wrapper {
     width: 100%;
@@ -1043,6 +1085,9 @@ footer a:hover {
   .section1 .content-wrapper h1 {
     font-size: 60px;
   }
+  .section1 .content-wrapper p {
+    width: 80% !important;
+  }
   .section2 .petCard {
     width: 80%;
   }
@@ -1094,6 +1139,17 @@ footer a:hover {
   }
 }
 @media screen and (max-width: 576px) {
+  .section1 .container .content-wrapper {
+    padding-left: 60px;
+    gap: 20px;
+  }
+  .section1 .container .content-wrapper h1 {
+    line-height: 55px;
+    font-size: 50px;
+  }
+  .section1 .container .content-wrapper button {
+    margin-top: 15px;
+  }
   .section6 .team_member h3 {
     width: 65%;
     line-height: 15px !important;
@@ -1118,6 +1174,19 @@ footer a:hover {
   .modal {
     left: 9% !important;
     width: 80% !important;
+  }
+}
+@media screen and (max-width: 350px) {
+  .section1 .container .content-wrapper {
+    padding-left: 30px;
+    gap: 15px;
+  }
+  .section1 .container .content-wrapper h1 {
+    line-height: 40px;
+    font-size: 30px;
+  }
+  .section1 .container .content-wrapper button {
+    margin-top: 15px;
   }
 }
 .section_banner {
@@ -1161,27 +1230,33 @@ footer a:hover {
   gap: 30px;
 }
 .section__blog__container .buttons {
-  height: 10vh;
-  width: 50%;
-  margin-top: 30px;
+  width: 80%;
+  margin-top: 70px;
   align-items: center;
-  justify-content: left;
-  gap: 0;
+  gap: 30px;
 }
 .section__blog__container #prevBtn,
 .section__blog__container #nextBtn {
-  font-size: 14px;
-  margin-left: 40px;
+  transition: all 0.5s ease;
+  font-size: 18px;
+  margin-left: 10px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: rgba(239, 243, 247, 0.48);
-  width: 45px;
+  width: 65px;
   height: 45px;
   border-radius: 0 !important;
   color: #dd1515;
   border: 1px solid #f0e9ff;
+}
+.section__blog__container #prevBtn:hover,
+.section__blog__container #nextBtn:hover {
+  color: darkred;
+  border: 1px solid darkred;
+  transform: scale(1.1);
+  font-size: 20px;
 }
 .section__blog__container .wrappersBlog {
   width: 65%;
@@ -1465,13 +1540,15 @@ footer a:hover {
 }
 
 .BlogCard-wrapper {
-  padding-top: 70px;
+  padding-top: 50px;
+  margin-bottom: 70px;
 }
 .BlogCard-wrapper .blog_card {
   box-shadow: 2px 4px 20px 2px rgb(50, 44, 44);
   display: flex;
-  padding: 70px 50px;
-  width: 85%;
+  flex-direction: column;
+  padding: 50px;
+  width: 70%;
   border-radius: 10px;
   margin: 0 auto;
 }
@@ -1479,8 +1556,8 @@ footer a:hover {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  width: 50%;
-  padding: 10px 50px;
+  width: 100%;
+  padding-top: 20px;
 }
 .BlogCard-wrapper .contents * {
   transition: all 0.3s ease;
@@ -1494,7 +1571,10 @@ footer a:hover {
 }
 .BlogCard-wrapper .my_image-wrapper {
   border-radius: 15px;
-  width: 50%;
+  width: 100%;
+  height: 400px;
+  -o-object-fit: contain;
+     object-fit: contain;
   margin: 0 auto;
 }
 .BlogCard-wrapper .my_image-wrapper img {
@@ -1502,6 +1582,7 @@ footer a:hover {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
+  height: 100%;
 }
 
 @media screen and (max-width: 1200px) {
@@ -1522,6 +1603,65 @@ footer a:hover {
   }
   .section__blog__container .blogAndRight .right-side .recents .recentPost h3 {
     width: 60% !important;
+  }
+  .BlogCard-wrapper .blog_card {
+    padding: 30px;
+  }
+  .BlogCard-wrapper .contents {
+    gap: 15px;
+  }
+  .BlogCard-wrapper .contents h2 {
+    font-size: 25px;
+  }
+  .BlogCard-wrapper .contents h3 {
+    font-size: 16px;
+  }
+  .BlogCard-wrapper .my_image-wrapper {
+    border-radius: 15px;
+    width: 100%;
+    height: 300px;
+    -o-object-fit: contain;
+       object-fit: contain;
+    margin: 0 auto;
+  }
+  .BlogCard-wrapper .my_image-wrapper img {
+    border-radius: 15px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+@media screen and (max-width: 680px) {
+  .BlogCard-wrapper .blog_card {
+    padding: 30px;
+  }
+  .BlogCard-wrapper .contents {
+    gap: 10px;
+  }
+  .BlogCard-wrapper .contents h2 {
+    font-size: 20px;
+  }
+  .BlogCard-wrapper .contents h3 {
+    font-size: 15px;
+  }
+  .BlogCard-wrapper .contents p {
+    font-size: 13px;
+  }
+  .BlogCard-wrapper .my_image-wrapper {
+    border-radius: 15px;
+    width: 100%;
+    height: 200px;
+    -o-object-fit: contain;
+       object-fit: contain;
+    margin: 0 auto;
+  }
+  .BlogCard-wrapper .my_image-wrapper img {
+    border-radius: 15px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    height: 100%;
   }
 }
 @media screen and (max-width: 580px) {
@@ -1583,6 +1723,23 @@ footer a:hover {
   }
   .section__blog__container .blogs .blogDiv h4 {
     font-weight: 400;
+  }
+  .BlogCard-wrapper .blog_card {
+    padding: 30px;
+  }
+  .BlogCard-wrapper .contents {
+    gap: 10px;
+  }
+  .BlogCard-wrapper .contents h2 {
+    font-size: 16px;
+  }
+  .BlogCard-wrapper .contents h3 {
+    font-size: 13px;
+  }
+  .BlogCard-wrapper .my_image-wrapper {
+    border-radius: 15px;
+    width: 100%;
+    height: 150px;
   }
 }
 @media screen and (max-width: 400px) {

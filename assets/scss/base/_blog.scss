@@ -23,27 +23,35 @@
         gap: 30px;
     }
 .buttons{
-    height: 10vh;
-    width: 50%;
-    margin-top: 30px;
+   
+    width: 80%;
+    margin-top: 70px;
+   
     align-items: center;
-    justify-content: left;
-    gap: 0;
+
+    gap: 30px;
 }
     #prevBtn,
     #nextBtn {
-        font-size: 14px;
-        margin-left: 40px;
+        transition: all 0.5s ease;
+        font-size: 18px;
+        margin-left: 10px;
         cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
         background-color: rgba(239, 243, 247, 0.48);
-        width: 45px;
+        width: 65px;
         height: 45px;
         border-radius: 0 !important;
         color: #dd1515;
         border: 1px solid #f0e9ff;
+        &:hover{
+            color: darkred;
+            border: 1px solid darkred;
+            transform: scale(1.1);
+            font-size: 20px;
+        }
     }
    .wrappersBlog{
     width: 65%;
@@ -386,13 +394,14 @@
 
 }
 .BlogCard-wrapper{
-    padding-top: 70px;
+    padding-top: 50px;
+    margin-bottom: 70px;
     .blog_card{
         box-shadow: 2px 4px 20px 2px rgb(50, 44, 44);
-      
         display: flex;
-        padding: 70px 50px;
-        width: 85%;
+        flex-direction: column;
+        padding: 50px;
+        width: 70%;
         border-radius: 10px;
         margin: 0 auto;
     }
@@ -408,8 +417,8 @@
         display: flex;
         flex-direction: column;
         gap: 30px;
-        width: 50%;
-        padding:10px 50px;
+        width: 100%;
+        padding-top:20px;
         h2{
             font-size: 30px;
             color: red;
@@ -418,13 +427,16 @@
     }
     .my_image-wrapper{
         border-radius: 15px;
-        width: 50%;
+        width: 100%;
+        height: 400px;
+        object-fit: contain;
         
         margin: 0 auto;
         img{
             border-radius: 15px;
             object-fit: cover;
             width: 100%;
+            height: 100%;
         }
 
     }
@@ -477,7 +489,71 @@
 
 
     }
+    .BlogCard-wrapper{
+        .blog_card{ 
+            padding: 30px; 
+        }
+        .contents{   
+            h2{
+                font-size: 25px;          
+            }
+            h3{
+                font-size: 16px;
+            }
+            gap: 15px;
+        }
+        .my_image-wrapper{
+            border-radius: 15px;
+            width: 100%;
+            height: 300px;
+            object-fit: contain;
+            
+            margin: 0 auto;
+            img{
+                border-radius: 15px;
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+    
+        }
+    
+    }
 
+}
+@media screen and (max-width:680px){
+    .BlogCard-wrapper{
+        .blog_card{ 
+            padding: 30px; 
+        }
+        .contents{   
+            h2{
+                font-size: 20px;          
+            }
+            h3{
+                font-size: 15px;
+            }
+            p{
+                font-size: 13px;
+            }
+            gap: 10px;
+        }
+        .my_image-wrapper{
+            border-radius: 15px;
+            width: 100%;
+            height: 200px;
+            object-fit: contain;         
+            margin: 0 auto;
+            img{
+                border-radius: 15px;
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+    
+        }
+    
+    }
 
 }
 @media screen and (max-width:580px){
@@ -546,6 +622,29 @@
     }
   
 }
+.BlogCard-wrapper{
+    .blog_card{ 
+        padding: 30px; 
+    }
+    .contents{   
+        h2{
+            font-size: 16px;          
+        }
+        h3{
+            font-size: 13px;
+        }
+        gap: 10px;
+    }
+    .my_image-wrapper{
+        border-radius: 15px;
+        width: 100%;
+        height: 150px;
+     
+
+    }
+
+}
+
 }
 
 @media screen and (max-width:400px){

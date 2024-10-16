@@ -81,6 +81,7 @@ header {
     transition: all 0.3s ease; 
     display: flex;
     align-items: center;
+    z-index: 999;
     height: 95px;
     width: 100%;
     button {
