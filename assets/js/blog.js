@@ -59,16 +59,70 @@ document.addEventListener("DOMContentLoaded",async()=>{
                 `
             })
         });
+
+
+
+
         categoryContainer.appendChild(categoryDiv);
         
         tagCloudsContainer.innerHTML+=`
-        <div>${category.name}</div>       
+        <div class="tagCloud">${category.name}</div>       
         `
+        
     });
+
+    const tagClouds=document.querySelectorAll(".tagCloud");
+    tagClouds.forEach((tag)=>{
+ tag.addEventListener('click', () => {
+            const filteredBlogs = posts.filter(post => 
+                Array.isArray(post.categories) && post.categories.includes(tag.innerHTML)
+            );
+            blogsContainer.innerHTML = '';
+            filteredBlogs.forEach((blog)=>{
+                const createdTime = `${moment(blog.createdAt).format('D')}<br>${moment(blog.createdAt).format('MMM')}`;
+                blogsContainer.innerHTML += `
+                <div data-id=${blog.id} class="blogDiv">
+                                <div class="img-wrapper">
+                                    <img src="${blog.imageUrl}" alt="">
+                                                            
+                                </div>
+                               <div class="content-wrapper">
+                               
+                             <div class="createdAt">${createdTime}</div>
+                             <i class="fa-regular fa-heart likeIcon"></i>            
+                             <i class="fa-regular fa-pen-to-square editIcon"></i>
+                             <i class="fa-regular fa-trash-can removeIcon"></i>
+                                <h2>${blog.title}</h2>
+                                <p>${blog.description}</p>
+                                <div class="row blogIcons">
+                                    <div class="row">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                        <h4>${blog.createdBy}</h4> 
+                                    </div>
+                                    <div class="row">
+                                        <i class="fa-solid fa-layer-group"></i>
+                                         <h4>${blog.categories} </h4> 
+                                    </div>
+                                    <div class="row">
+                                        <i class="fa-regular fa-comments"></i>
+                                         <h4>9823 Comments</h4>
+                                    </div>
+                                </div>
+                                   <a href="detail.html?id=${blog.id}" class="getDetails">Read More...</a>
+                               </div>
+                            </div>
+        
+                `
+            })
+        });
+        
+    })
+    
    
     const lastFourElements = posts.slice(-4);
     const lastSixElements = posts.slice(-6);
     lastFourElements.forEach(post => {
+        
         const relativeTime = moment(post.createdAt, "YYYYMMDD").fromNow();
         recentsContainer.innerHTML+=`
          <div data-id=${post.id} class="recentPost">
@@ -85,16 +139,11 @@ document.addEventListener("DOMContentLoaded",async()=>{
        
     });
     const recentClickeds=document.querySelectorAll(".recentPost");
-    recentClickeds.forEach(post => {
-        
-        
+    recentClickeds.forEach(post => {   
         post.addEventListener("click",(e)=>{
             const theBlogId=post.getAttribute("data-id");
             console.log(theBlogId);
-            window.location.replace(`detail.html?id=${theBlogId}`);
-           
-            
-            
+            window.location.replace(`detail.html?id=${theBlogId}`);          
         })
     });
     lastSixElements.forEach(post => {
