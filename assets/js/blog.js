@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
                                          <h4>9823 Comments</h4>
                                     </div>
                                 </div>
+                                   <a href="detail.html?id=${blog.id}" class="getDetails">Read More...</a>
                                </div>
                             </div>
         
@@ -70,9 +71,9 @@ document.addEventListener("DOMContentLoaded",async()=>{
     lastFourElements.forEach(post => {
         const relativeTime = moment(post.createdAt, "YYYYMMDD").fromNow();
         recentsContainer.innerHTML+=`
-         <div class="recentPost">
+         <div data-id=${post.id} class="recentPost">
                             <div class="img-wrapper"> <img src="${post.imageUrl}" alt=""></div>
-                            <div>
+                            <div class="content-wrapper">
                              <h3>${post.title}</h3>
                             <span>${relativeTime}</span>
                             </div>
@@ -80,7 +81,21 @@ document.addEventListener("DOMContentLoaded",async()=>{
                         </div>    
        
         `
+
        
+    });
+    const recentClickeds=document.querySelectorAll(".recentPost");
+    recentClickeds.forEach(post => {
+        
+        
+        post.addEventListener("click",(e)=>{
+            const theBlogId=post.getAttribute("data-id");
+            console.log(theBlogId);
+            window.location.replace(`detail.html?id=${theBlogId}`);
+           
+            
+            
+        })
     });
     lastSixElements.forEach(post => {
 feedsContainer.innerHTML+=`

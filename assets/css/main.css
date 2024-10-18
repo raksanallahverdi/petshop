@@ -1455,24 +1455,34 @@ footer a:hover {
   font-size: 18px;
 }
 .section__blog__container .right-side .recents .recentPost {
+  gap: 0;
+  transition: all 0.7s ease;
   display: flex;
-  width: 100%;
+  width: 100% !important;
+}
+.section__blog__container .right-side .recents .recentPost:hover {
+  background-color: rgba(173, 173, 237, 0.518);
+  cursor: pointer;
 }
 .section__blog__container .right-side .recents .recentPost .img-wrapper {
+  display: flex;
+  padding-right: 30px;
+  align-items: flex-end;
   width: 40%;
 }
-.section__blog__container .right-side .recents .recentPost div {
+.section__blog__container .right-side .recents .recentPost div.content-wrapper {
+  text-align: start;
   width: 60%;
   font-size: 14px;
-  justify-content: center;
-  margin-left: 15px;
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
 }
-.section__blog__container .right-side .recents .recentPost div span {
+.section__blog__container .right-side .recents .recentPost div.content-wrapper span {
   color: #999999;
 }
-.section__blog__container .right-side .recents .recentPost div h3 {
+.section__blog__container .right-side .recents .recentPost div.content-wrapper h3 {
+  text-align: left;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1517,9 +1527,12 @@ footer a:hover {
   font-size: 18px;
 }
 .section__blog__container .right-side .feeds .instagramFeeds {
+  width: 100%;
   margin-top: 30px;
   gap: 8px;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .section__blog__container .right-side .feeds .img-wrapper {
   cursor: pointer;
@@ -1541,7 +1554,7 @@ footer a:hover {
 
 .BlogCard-wrapper {
   padding-top: 50px;
-  margin-bottom: 70px;
+  margin-bottom: 90px;
 }
 .BlogCard-wrapper .blog_card {
   box-shadow: 2px 4px 20px 2px rgb(50, 44, 44);
@@ -1550,7 +1563,7 @@ footer a:hover {
   padding: 50px;
   width: 70%;
   border-radius: 10px;
-  margin: 0 auto;
+  margin: 0 auto 90px auto;
 }
 .BlogCard-wrapper .contents {
   display: flex;
@@ -1601,8 +1614,11 @@ footer a:hover {
   .section__blog__container .wrappersBlog {
     width: 100%;
   }
+  .section__blog__container .blogAndRight .right-side .recents .recentPost .img-wrapper {
+    width: 25%;
+  }
   .section__blog__container .blogAndRight .right-side .recents .recentPost h3 {
-    width: 60% !important;
+    width: 100% !important;
   }
   .BlogCard-wrapper .blog_card {
     padding: 30px;
@@ -1662,6 +1678,9 @@ footer a:hover {
        object-fit: cover;
     width: 100%;
     height: 100%;
+  }
+  .blogAndRight .right-side .recents .recentPost .img-wrapper {
+    width: 35% !important;
   }
 }
 @media screen and (max-width: 580px) {
@@ -1741,10 +1760,16 @@ footer a:hover {
     width: 100%;
     height: 150px;
   }
+  .blogAndRight .right-side .recents .recentPost .img-wrapper {
+    width: 40% !important;
+  }
 }
 @media screen and (max-width: 400px) {
   .section__blog__container .blogs .blogDiv {
     width: 87% !important;
+  }
+  .section__blog__container .blogAndRight .right-side .recents .recentPost .content-wrapper {
+    padding-left: 10px !important;
   }
 }
 .wishlist-wrapper {

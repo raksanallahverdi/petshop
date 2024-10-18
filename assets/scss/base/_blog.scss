@@ -171,6 +171,7 @@
 
     .right-side {
         width: 30%;
+        
         input {
 
             font-size: 13px;
@@ -280,19 +281,32 @@
             font-size: 18px;
 
             .recentPost {
+                gap: 0;
+                transition: all 0.7s ease;
+                &:hover{
+                    background-color: rgba(173, 173, 237, 0.518);
+                    cursor: pointer;
+                }
                 .img-wrapper{
+                    display: flex;
+                    padding-right: 30px;
+                    align-items: flex-end;
+              
                     width: 40%;
+                   
                 }
                 display: flex;
-                width: 100%;
+                width: 100% !important;
 
-                div {
+                div.content-wrapper {
+                    text-align: start;
                     width: 60%;
                     span {
                         color: #999999;
                     }
 
                     h3 {
+                        text-align: left;
                         white-space: nowrap;
                         overflow: hidden;
                         text-overflow: ellipsis;
@@ -301,8 +315,7 @@
                     }
 
                     font-size: 14px;
-                    justify-content: center;
-                    margin-left: 15px;
+                    align-items: flex-start;
                     display: flex;
                     flex-direction: column;
                 }
@@ -358,9 +371,12 @@
             font-size: 18px;
 
             .instagramFeeds {
+                width: 100%;
                 margin-top: 30px;
                 gap: 8px;
                 display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
             .img-wrapper {
@@ -395,7 +411,7 @@
 }
 .BlogCard-wrapper{
     padding-top: 50px;
-    margin-bottom: 70px;
+    margin-bottom: 90px;
     .blog_card{
         box-shadow: 2px 4px 20px 2px rgb(50, 44, 44);
         display: flex;
@@ -403,7 +419,7 @@
         padding: 50px;
         width: 70%;
         border-radius: 10px;
-        margin: 0 auto;
+        margin: 0 auto 90px auto;
     }
     .contents{
         *{
@@ -477,8 +493,11 @@
             .right-side{
                 .recents {
                     .recentPost{
+                        .img-wrapper{
+                            width: 25%;
+                        }
                         h3{
-                            width: 60% !important;
+                            width: 100% !important;
                         }
         
                     }
@@ -525,7 +544,10 @@
     .BlogCard-wrapper{
         .blog_card{ 
             padding: 30px; 
+            
         }
+        
+
         .contents{   
             h2{
                 font-size: 20px;          
@@ -554,6 +576,13 @@
         }
     
     }
+    .blogAndRight{
+        .right-side{
+            .recents {
+                .recentPost{
+                    .img-wrapper{
+                        width: 35% !important;
+                    }}}}}
 
 }
 @media screen and (max-width:580px){
@@ -644,6 +673,13 @@
     }
 
 }
+.blogAndRight{
+    .right-side{
+        .recents {
+            .recentPost{
+                .img-wrapper{
+                    width: 40% !important;
+                }}}}}
 
 }
 
@@ -657,5 +693,19 @@
             width: 87% !important;
 
         }}
+
+        .blogAndRight{
+            .right-side{
+                .recents {
+                    .recentPost{
+                      .content-wrapper{
+                        padding-left: 10px !important;
+                      }
+        
+                    }
+                   
+                }
+            }
+        }  
     }
 }
