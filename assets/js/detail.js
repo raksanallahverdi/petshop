@@ -3,12 +3,14 @@ import { API_BASE_URL, endpoints } from "./constants.js";
 const blogCard=document.querySelector(".BlogCard-wrapper");
 
 document.addEventListener("DOMContentLoaded",async ()=>{
+    
     const id = new URLSearchParams(location.search).get("id");
     const blogs=await getDataById(API_BASE_URL,endpoints.blogs,id);
     const blog=blogs[0];
-    const createdAtDate = card.createdAt.includes("T") 
-    ? card.createdAt.split("T")[0]  
-    : card.createdAt; 
+    const createdAtDate = blog.createdAt.includes("T") 
+    ? blog.createdAt.split("T")[0]  
+    : blog.createdAt; 
+    
     blogCard.innerHTML+=`<div class="blog_card">
     <div class="my_image-wrapper">
         <img src="${blog.imageUrl}" alt="">
