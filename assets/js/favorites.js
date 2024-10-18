@@ -5,6 +5,9 @@ let localCards = JSON.parse(localStorage.getItem("blog")) || [];
 const movies=await getAllData(API_BASE_URL,endpoints.blogs);
 movies.forEach((card,idx) => {
   if(localCards.includes(card.id)){
+    const createdAtDate = card.createdAt.includes("T") 
+    ? card.createdAt.split("T")[0]  
+    : card.createdAt; 
     cardsContainer.innerHTML+= `
         <div data-id=${card.id} class="wishedElement">
                         <div class="img-wrapper">
@@ -12,7 +15,7 @@ movies.forEach((card,idx) => {
                         </div>                                       
                        <div class="content-wrapper">
                          <h2>${card.title}</h2>                     
-                       <div class="createdAt">${card.createdAt}</div> 
+                       <div class="createdAt">${createdAtDate}</div> 
                        <p>${card.description}</p>
                        <div class="row blogIcons">
                        <div class="row">
