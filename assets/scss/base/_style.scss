@@ -377,6 +377,11 @@
             }
 
             h3 {
+                &:hover{
+                    cursor: pointer;
+                    transform: translateY(-15px);
+                }
+                transition: all 0.3 ease;
 
                 background-color: white;
                 position: absolute;
